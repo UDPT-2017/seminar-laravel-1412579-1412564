@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('users.pages.home');
 });
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard.db');
+});
+
