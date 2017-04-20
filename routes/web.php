@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('users.homepage');
 });
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard.db');
+});
+
