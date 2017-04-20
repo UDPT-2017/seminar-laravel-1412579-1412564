@@ -104,13 +104,25 @@
                             <a href=""><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Bài viết<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="">Thêm bài viết</a>
+                                    <a href="">List Category</a>
                                 </li>
                                 <li>
-                                    <a href="">Xem các bài viết</a>
+                                    <a href="">Add Category</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="">List Product</a>
+                                </li>
+                                <li>
+                                    <a href="">Add Product</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
