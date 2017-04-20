@@ -19,3 +19,19 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard.db');
 });
 
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'cate'],function(){
+        //route get list
+        Route::get('list', ['as'=>'admin.cate.getList','uses'=>'CateController@getList']);
+        //Route Add
+        Route::get('add',['as'=>'admin.cate.getAdd','uses'=>'CateController@getAdd']);
+        Route::post('add',['as'=>'admin.cate.postAdd','uses'=>'CateController@postAdd']);
+        //Route Delete
+        Route::get('delete/{id}',['as'=>'admin.cate.getDelete','uses'=>'CateController@getDelete']);
+        //Route 
+        Route::get('edit/{id}',['as'=>'admin.cate.getEdit','uses'=>'CateController@getEdit']);
+        Route::post('edit/{id}',['as'=>'admin.cate.postEdit','uses'=>'CateController@postEdit']);
+
+
+    });
+});

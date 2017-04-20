@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('admin.index')
 @section('controller','Category')
 @section('action','List')
 @section('content')
@@ -23,20 +23,20 @@
         <tr class="odd gradeX" align="center">
             <td><?php echo $stt;?></td>
             
-            <td>{!! $item['name'] !!}</td>
+            <td>{!! $item->name !!}</td>
             <td>
-                @if($item['parent_id']==0)
+                @if($item->parent_id==0)
                 {!! "None" !!}
                 @else
                  <?php
-                    $parent = DB::table('cates')->where('id',$item['parent_id'])->first();
+                    $parent = DB::table('cates')->where('id',$item->parent_id)->first();
                     echo $parent->name;
                 ?>
                 @endif
                
             </td>
-            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return xacnhanxoa('Bạn có chắc chắn chưa?')" href="{!! URL::route('admin.cate.getDelete',$item['id']) !!}">Delete</a></td>
-            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{!! URL::route('admin.cate.getEdit',$item['id']) !!}">Edit</a></td>
+            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return xacnhanxoa('Bạn có chắc chắn chưa?')" href="{!! URL::route('admin.cate.getDelete',$item->id) !!}">Delete</a></td>
+            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{!! URL::route('admin.cate.getEdit',$item->id) !!}">Edit</a></td>
         </tr>
         @endforeach
     </tbody>

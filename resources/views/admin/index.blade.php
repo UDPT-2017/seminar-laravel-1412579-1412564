@@ -107,10 +107,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="">List Category</a>
+                                    <a href="{!! URL::route('admin.cate.getList') !!}">List Category</a>
                                 </li>
                                 <li>
-                                    <a href="">Add Category</a>
+                                    <a href="{!! URL::route('admin.cate.getAdd') !!}">Add Category</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -138,9 +138,34 @@
 
      
              <!--Content here-->
-             @yield('content')
+            
     </div>
-    
+    <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">@yield('controller')
+                            <small>@yield('action')</small>
+                        </h1>
+                    </div>
+                    <div class="col-lg-12">
+                        @if (Session::has('flash_massage'))
+                            <div class="alert alert-{!! Session::get('flash_level') !!}">
+                                {!! Session::get('flash_massage') !!}
+                            </div>
+                        @endif
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    <!-- START -  Đây là phần chứa content trong dashboard-->
+                    @yield('content')
+                     <!-- END -  Đây là phần chứa content trong dashboard-->
+
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+</div>
     <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="{{ url('public/vendor/jquery/jquery.min.js')}}"></script>
@@ -167,7 +192,7 @@
     <script src="{{ url('public/js/delimg.js') }}"></script>
     <script>
     $(document).ready(function() {
-        $('#dataTables-1').DataTable({
+        $('#dataTables-example').DataTable({
             responsive: true
         });
         $('#dataTables-2').DataTable({
