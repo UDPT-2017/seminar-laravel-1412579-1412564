@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('admin.index')
 @section('controller','Product')
 @section('action','Edit')
 @section('content')
@@ -27,7 +27,7 @@
             <select class="form-control" name="sltParent">
                 <option value="0">Please Choose Category</option>
                 <?php 
-                    cate_parent($cate,0,'--',$product['cate_id']);
+                    cate_parent($cate,0,'--',$product->cate_id);
                 ?>
             </select>
         </div>
@@ -35,8 +35,8 @@
         <div class="form-group">
             <label>Image Current</label>
             <br>
-            <img src="{!! asset('resources/upload/images/'.$product['image']) !!}" class="hinhanh" >
-            <input type="hidden" name="img_crr" value="{!! $product['image'] !!}">
+            <img src="{!! asset('resources/upload/images/'.$product->image) !!}" class="hinhanh" >
+            <input type="hidden" name="img_crr" value="{!! $product->image !!}">
         </div>
         <div class="form-group">
             <label>Sửa ảnh đại diện</label>
@@ -44,29 +44,29 @@
         </div>
         <div class="form-group">
             <label>Name</label>
-            <input class="form-control" name="txtName" onchange="myFunction(this.value)" value="{!! old('txtName',isset($product) ? $product['name'] : null) !!}" placeholder="Please Enter Name" />
+            <input class="form-control" name="txtName" onchange="myFunction(this.value)" value="{!! old('txtName',isset($product) ? $product->name : null) !!}" placeholder="Please Enter Name" />
         </div>
         <div class="form-group">
             <label>Price</label>
-            <input class="form-control" name="txtPrice" onchange="myFunction(this.value)" value="{!! old('txtPrice',isset($product) ? $product['price'] : null) !!}" placeholder="Please Enter Price" />
+            <input class="form-control" name="txtPrice" onchange="myFunction(this.value)" value="{!! old('txtPrice',isset($product) ? $product->price : null) !!}" placeholder="Please Enter Price" />
         </div>
         <div class="form-group">
             <label>Intro</label>
-            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtIntro">{!! old('txtIntro',isset($product) ? $product['intro'] : null) !!}</textarea>
+            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtIntro">{!! old('txtIntro',isset($product) ? $product->intro : null) !!}</textarea>
             <script type="text/javascript">ckeditor("txtIntro")</script>
         </div>
         <div class="form-group">
             <label>Content</label>
-            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtContent">{!! old('txtContent',isset($product) ? $product['content'] : null) !!}</textarea>
+            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtContent">{!! old('txtContent',isset($product) ? $product->content : null) !!}</textarea>
             <script type="text/javascript">ckeditor("txtContent")</script>
         </div>
         <div class="form-group">
             <label>Product Keywords</label>
-            <input class="form-control" name="txtKeywords" onchange="myFunction(this.value)" value="{!! old('txtKeywords',isset($product) ? $product['keywords'] : null) !!}" placeholder="Please Enter Keywords" />
+            <input class="form-control" name="txtKeywords" onchange="myFunction(this.value)" value="{!! old('txtKeywords',isset($product) ? $product->keywords : null) !!}" placeholder="Please Enter Keywords" />
         </div>
         <div class="form-group">
             <label>Product Description</label>
-            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtDescription"> {!! old('txtDescription',isset($product) ? $product['description'] : null) !!} </textarea>
+            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtDescription"> {!! old('txtDescription',isset($product) ? $product->description : null) !!} </textarea>
             <script type="text/javascript">ckeditor("txtDescription")</script>
         </div>
         <div class="form-group">
@@ -87,7 +87,7 @@
     @foreach($product_img as $key => $item)
     
     <div class="form-group" id="{!! $key !!}" >
-        <img src="{!! asset('resources/upload/details/'.$item['image']) !!}" class="details"  id="{!! $key !!}" idHinh="{!! $item['id'] !!}">
+        <img src="{!! asset('resources/upload/details/'.$item->image) !!}" class="details"  id="{!! $key !!}" idHinh="{!! $item->id !!}">
         <a href="javascript:void(0)" type="button" onclick="return xacnhanxoa('Bạn có chắc chắn muốn xoá hình này?')" id="del_img" class="btn btn-danger btn-circle icon_del" href=""><i class="fa fa-times"></i></a>
     </div>
 

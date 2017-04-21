@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{ url('public/smac.ico')}}">
-    <title>CLB Học Thuật Khoa Y ĐHQG TPHCM - School of Medicine Academic Club - SMAC</title>
+    <title>Gretong Admin Dashboard</title>
     <link rel="stylesheet" type="text/css" href="{{ url('public/dist/sweetalert.css') }}">
     <script src="{{ url('public/dist/sweetalert.min.js') }}"></script>
     
@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">CLB Học Thuật Khoa Y ĐHQG TPHCM - School of Medicine Academic Club - SMAC</a>
+                <a class="navbar-brand" href="index.html">Gretong Admin Dashboard</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -119,15 +119,14 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="">List Product</a>
+                                    <a href="{!! URL::route('admin.product.getList') !!}">List Product</a>
                                 </li>
                                 <li>
-                                    <a href="">Add Product</a>
+                                    <a href="{!! URL::route('admin.product.getAdd') !!}">Add Product</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
                     
                     </ul>
                 </div>
@@ -188,8 +187,6 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ url('public/dist/js/sb-admin-2.js')}}"></script>
     <script src="{{ url('public/js/myScript.js') }}"></script>
-    <script src="{{ url('public/js/updateLuotThi.js') }}"></script>
-    <script src="{{ url('public/js/delimg.js') }}"></script>
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
