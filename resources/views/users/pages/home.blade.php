@@ -10,7 +10,7 @@
 					<h3>{{ $title[0]->headline }}</h3>
 					<p>{{ $title[0]->content }}</p>
 					<div class="crt-btn">
-						<a href="details.html">TAKE A LOOK</a>
+						<a href="details.html">Xem ngay</a>
 					</div>
 				</div>
 			</div>
@@ -20,7 +20,7 @@
 					<h3>{{ $title[1]->headline }}</h3>
 					<p>{{ $title[1]->content }}</p>
 					<div class="crt-btn">
-						<a href="details.html">SHOP NOW</a>
+						<a href="details.html">Xem ngay</a>
 					</div>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
 					<h3>{{ $title[2]->headline }}</h3>
 					<p>{{ $title[2]->content }}</p>
 					<div class="crt-btn">
-						<a href="details.html">SHOP NOW</a>
+						<a href="details.html">Xem ngay</a>
 					</div>
 				</div>
 			</div>
@@ -54,11 +54,8 @@
 			</div>
 			<div class="col-md-4 arriv-middle">
 				<img src="{{ asset('public/images/'.$title[5]->image) }}" class="img-responsive" alt="">
-				<div class="arriv-info3">
-					<h3>{{ $title[5]->headline }}</h3>
-					<div class="crt-btn">
-						<a href="details.html">SHOP NOW</a>
-					</div>
+				<div class="arriv-info2">
+					<a href="details.html"><h3>{{ $title[5]->headline }}<i class="ars"></i></h3></a>
 				</div>
 			</div>
 			<div class="col-md-4 arriv-right2">
@@ -77,8 +74,12 @@
 		<div class="specia-top">
 			<ul class="grid_2">
 		@foreach($product as $item)
-		<li>
+		<li>	
+			<div>
+			<span style="font-size: 15px;position: absolute;margin: 5px" class="label label-success">Mới nhất</span>
 				<a href="details.html"><img src="{{ asset('public/images/'.$item->image) }}" class="img-responsive" alt=""></a>
+				
+			</div>
 				<div class="special-info grid_1 simpleCart_shelfItem">
 					<h5>{{ $item->name }}</h5>
 					<div class="item_add"><span class="item_price"><h6>{!! number_format($item->price,0,',','.') !!}</h6></span></div>
