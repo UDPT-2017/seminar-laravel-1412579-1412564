@@ -63,8 +63,7 @@
             <script type="text/javascript">ckeditor("txtDescription")</script>
         </div>
         
-        <button type="submit" onclick="return xacnhan('Lưu sản phẩm?')" class="btn btn-default">Product Add</button>
-        <button type="reset" class="btn btn-default">Reset</button>
+        <button type="submit" onclick="return xacnhan('Lưu sản phẩm?')" class="btn btn-success">Product Add</button>
     
 </div>
 

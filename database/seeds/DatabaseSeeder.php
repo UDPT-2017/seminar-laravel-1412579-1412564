@@ -11,8 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-			array('username' => 'admin', 'password'=>Hash::make(1), 'level' => '1'),
+        DB::table('homepages')->insert([
+			array('headline' => 'NEW ARRIVALS', 'content'=> 'REVIVE YOUR WARDROBE WITH CHIC KNITS'),
+            array('headline' => 'TUXEDO', 'content' => 'REVIVE YOUR WARDROBE WITH CHIC KNITS'),
+            array('headline' => 'SWEATER', 'content'=> 'REVIVE YOUR WARDROBE WITH CHIC KNITS'),
+            array('headline' => 'Trekking Shoes', 'content'=> ''),
+            array('headline' => 'Casuall Glasses', 'content'=> ''),
+            array('headline' => 'Fresh Look T-Shirt', 'content'=> ''),
+            array('headline' => 'Elegant Watches', 'content'=> ''),
 			]);
     }
 }

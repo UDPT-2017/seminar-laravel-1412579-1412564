@@ -11,15 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('users.pages.home');
-});
+Route::get('/', ['as'=>'homepage','uses'=>'WelcomeController@Homepage']);
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard.db');
-});
 
 Route::group(['prefix'=>'admin'],function(){
+    Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'HomepageController@dashboard']);
+
     Route::group(['prefix'=>'cate'],function(){
         //route get list
         Route::get('list', ['as'=>'admin.cate.getList','uses'=>'CateController@getList']);
@@ -45,5 +42,11 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('edit/{id}',['as'=>'admin.product.getEdit','uses'=>'ProductController@getEdit']);
         Route::post('edit/{id}',['as'=>'admin.product.postEdit','uses'=>'ProductController@postEdit']);
         Route::get('delimg/{id}', ['as'=>'admin.product.getDelImg','uses'=>'ProductController@getDelImg']);
+     });
+
+    Route::group(['prefix'=>'homepage'],function(){
+        Route::get('list', ['as' => 'admin.homepage.getList', 'uses' => 'HomepageController@getList']);
+        Route::get('edit/{id}', ['as' => 'admin.homepage.getEdit', 'uses' => 'HomepageController@getEdit']);
+        Route::post('edit/{id}', ['as' => 'admin.homepage.postEdit', 'uses' => 'HomepageController@postEdit']);
      });
 });

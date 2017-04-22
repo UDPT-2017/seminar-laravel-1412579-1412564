@@ -56,8 +56,7 @@
                 <input name="rdoStatus" value="2" type="radio">Invisible
             </label>
         </div>
-        <button type="submit" onclick="return xacnhan('Lưu sản phẩm?')" class="btn btn-default">Category Add</button>
-        <button type="reset" class="btn btn-default">Reset</button>
+        <button type="submit" onclick="return xacnhan('Lưu sản phẩm?')" class="btn btn-success">Category Add</button>
     <form>
 </div>
 

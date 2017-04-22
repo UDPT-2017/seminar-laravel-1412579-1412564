@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="{{ url('public/smac.ico')}}">
+    <link rel="shortcut icon" href="{{ url('public/favicon.ico')}}">
     <title>Gretong Admin Dashboard</title>
     <link rel="stylesheet" type="text/css" href="{{ url('public/dist/sweetalert.css') }}">
     <script src="{{ url('public/dist/sweetalert.min.js') }}"></script>
@@ -101,28 +101,37 @@
                         
                         </li> -->
                         <li>
-                            <a href=""><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{!! URL::route('admin.dashboard') !!}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Danh mục<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!! URL::route('admin.cate.getList') !!}">List Category</a>
+                                    <a href="{!! URL::route('admin.cate.getList') !!}">Danh sách danh mục</a>
                                 </li>
                                 <li>
-                                    <a href="{!! URL::route('admin.cate.getAdd') !!}">Add Category</a>
+                                    <a href="{!! URL::route('admin.cate.getAdd') !!}">Thêm một danh mục mới</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!! URL::route('admin.product.getList') !!}">List Product</a>
+                                    <a href="{!! URL::route('admin.product.getList') !!}">Danh sách sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="{!! URL::route('admin.product.getAdd') !!}">Add Product</a>
+                                    <a href="{!! URL::route('admin.product.getAdd') !!}">Thêm sản phẩm mới</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-home fa-fw"></i> Trang chủ<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!! URL::route('admin.homepage.getList') !!}">Sửa tiêu đề và nội dung</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
