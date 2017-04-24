@@ -12,6 +12,8 @@
 */
 
 Route::get('/', ['as'=>'homepage','uses'=>'WelcomeController@Homepage']);
+Route::get('danh-muc/{id}/{alias}', ['as'=>'category','uses'=>'WelcomeController@Category']);
+Route::get('san-pham/{id}/{alias}', ['as'=>'productDetail','uses'=>'WelcomeController@productDetail']);
 
 
 Route::group(['prefix'=>'admin'],function(){

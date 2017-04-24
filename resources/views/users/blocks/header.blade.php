@@ -26,10 +26,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- start menu -->
 <link href="{{ url('public/css/megamenu.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ url('public/css/etalage.css') }}">
 <script type="text/javascript" src="{{ url('public/js/megamenu.js') }}"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <script src="{{ url('public/js/menu_jquery.js') }}"></script>
 <script src="{{ url('public/js/simpleCart.min.js') }}"> </script>
+<script src="{{ url('public/js/jquery.etalage.min.js') }}"></script>
+<script src="{{ url('public/js/menu_jquery.js') }}"></script>
 <script>
 			jQuery(document).ready(function($){
 
@@ -72,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header">
 	<div class="head-t">
 		<div class="logo">
-			<a href="index.html"><img src="{{ asset('public/images/logo.png') }}" class="img-responsive" alt=""/> </a>
+			<a href="{{ route('homepage') }}"><img src="{{ asset('public/images/logo.png') }}" class="img-responsive" alt=""/> </a>
 		</div>
 		<!-- start header_right -->
 		<div class="header_right">
@@ -130,12 +133,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
          ?>
 		<!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li class="active grid"><a class="color1" href="index.html">Home</a></li>
+			<li class="active grid"><a class="color1" href="{{ route('homepage') }}">Home</a></li>
 			<li class="grid"><a class="color2" href="#">new arrivals</a>
 				</li>
 
 				@foreach($menu_level_1 as $item_lv_1)
-				<li><a class="color6" href="#">{{ $item_lv_1->name }}</a>
+				<li><a class="color6" href="{{ route('category',[$item_lv_1->id,$item_lv_1->alias]) }}">{{ $item_lv_1->name }}</a>
 					 <?php $menu_level_2 = DB::table('cates')->where('parent_id',$item_lv_1->id)->get(); 
 					  ?>
            				@if(count($menu_level_2)>0)
@@ -146,11 +149,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="col1">
 										<div class="h_nav">
 										<?php $menu_level_3 = DB::table('cates')->where('parent_id',$item_lv_2->id)->get(); ?>
-										<h4>{{ $item_lv_2->name }}</h4>
+										<h4><a class="" href="{{ route('category',[$item_lv_2->id,$item_lv_2->alias]) }}">{{ $item_lv_2->name }}</a></h4>
 										<ul>
 											@if(count($menu_level_3)>0)
 												@foreach($menu_level_3 as $item_lv_3)
-												<li><a href="women.html">{{ $item_lv_3->name }}</a></li>
+												<li><a href="{{ route('category',[$item_lv_3->id,$item_lv_3->alias]) }}">{{ $item_lv_3->name }}</a></li>
 												@endforeach
 											@endif
 										</ul>	
