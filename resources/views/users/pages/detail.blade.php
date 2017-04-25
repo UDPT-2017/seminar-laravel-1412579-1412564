@@ -63,7 +63,7 @@
 					      </div>
 						  <div class="product_price">
 								<span class="price-access">{!! number_format($item->price,0,',','.') !!}</span>								
-								<button class="button1"><span>Add to cart</span></button>
+								<div class="item_add"><span class="item_price"><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}">Add to cart</a></span></div>
 		                  </div>
 						 <div class="clearfix"></div>
 				     </div>

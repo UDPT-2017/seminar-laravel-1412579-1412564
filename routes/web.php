@@ -14,8 +14,8 @@
 Route::get('/', ['as'=>'homepage','uses'=>'WelcomeController@Homepage']);
 Route::get('danh-muc/{id}/{alias}', ['as'=>'category','uses'=>'WelcomeController@Category']);
 Route::get('san-pham/{id}/{alias}', ['as'=>'productDetail','uses'=>'WelcomeController@productDetail']);
-
-
+Route::get('mua-hang/{id}/{alias}',['as' => 'shoppingCart','uses' => 'WelcomeController@shoppingCart']);
+Route::get('gio-hang',['as' => 'Cart','uses' => 'WelcomeController@Cart']);
 Route::group(['prefix'=>'admin'],function(){
     Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'HomepageController@dashboard']);
 

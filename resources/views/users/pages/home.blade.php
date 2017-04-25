@@ -89,7 +89,7 @@
 				<div class="special-info grid_1 simpleCart_shelfItem">
 					<a href="{{ route('productDetail',[$item->id,$item->alias]) }}"><h5>{{ $item->name }}</h5></a>
 					<div class="item_add"><span class="item_price"><h6>{!! number_format($item->price,0,',','.') !!}</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#">Add to cart</a></span></div>
+					<div class="item_add"><span class="item_price"><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}">Add to cart</a></span></div>
 				</div>
 		</li>
 		@endforeach

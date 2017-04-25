@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Cart;
 class WelcomeController extends Controller
 {
     public function Homepage(){
@@ -40,6 +41,19 @@ class WelcomeController extends Controller
         // dd(count($images));
         //dd($related);
         return view('users.pages.detail',compact('product_detail','images','related'));
+    }
+    public function shoppingCart($id){
+        $product_buy = DB::table('products')->where('id',$id)->first();
+        Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options'=>array('img'=>$product_buy->image)));
+        return redirect()->route('Cart');
+
+    }
+    public function Cart(){
+        $content = Cart::content();
+        $total = Cart::subtotal();
+        $totalInt = str_replace(',','',$total);
+        $countInt  = Cart::count();
+        return view('users.pages.checkout',compact('content','totalInt','countInt'));
     }
 }
 

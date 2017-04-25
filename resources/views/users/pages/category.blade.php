@@ -133,7 +133,7 @@
 					 <div class="grid_1 simpleCart_shelfItem">
 				    
 					 <div class="item_add"><span class="item_price"><h6>{!! number_format($product[$iCount]->price,0,',','.') !!}</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#">Add to cart</a></span></div>
+					<div class="item_add"><span class="item_price"><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}">Add to cart</a></span></div>
 					 </div>
 			   	</div>
 			</div>
