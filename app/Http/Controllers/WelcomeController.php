@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use Request;
 use DB;
 use Cart;
 class WelcomeController extends Controller
@@ -53,7 +54,23 @@ class WelcomeController extends Controller
         $total = Cart::subtotal();
         $totalInt = str_replace(',','',$total);
         $countInt  = Cart::count();
+        //dd($content);
         return view('users.pages.checkout',compact('content','totalInt','countInt'));
+    }
+    public function xoasanpham($id){
+        if(Request::ajax()){
+            Cart::remove($id);
+            echo 1;
+        }
+    }
+    public function capnhat($id){
+        if(Request::ajax()){
+            $id = Request::get('rowId');
+            $qty = Request::get('qty');
+            Cart::update($id,$qty);
+            echo 1;
+        }
+        
     }
 }
 

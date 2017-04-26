@@ -16,6 +16,8 @@ Route::get('danh-muc/{id}/{alias}', ['as'=>'category','uses'=>'WelcomeController
 Route::get('san-pham/{id}/{alias}', ['as'=>'productDetail','uses'=>'WelcomeController@productDetail']);
 Route::get('mua-hang/{id}/{alias}',['as' => 'shoppingCart','uses' => 'WelcomeController@shoppingCart']);
 Route::get('gio-hang',['as' => 'Cart','uses' => 'WelcomeController@Cart']);
+Route::get('xoa-san-pham/{id}',['as' => 'xoasanpham','uses' => 'WelcomeController@xoasanpham']);
+Route::get('cap-nhat/{id}/{qty}',['as' => 'capnhat','uses' => 'WelcomeController@capnhat']);
 Route::group(['prefix'=>'admin'],function(){
     Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'HomepageController@dashboard']);
 
