@@ -24,12 +24,29 @@ Yêu cầu **bắt buộc**
 * [ ] Tạo github page để viết lại báo cáo cho nội dung đề tài tìm hiểu
 
 Các **nội dung lý thuyết** dự định tìm hiểu. Nhóm liệt kê các nội dung đã làm được vào bên dưới và check vào các nội dung đã tìm hiểu được.
-* [ ] Nội dung 1
-* [ ] Nội dung 2
-
+* [ ] MVC trong Laravel
+* [ ] Composer
+* [ ] Blade Template (tương tự view engine bên Nodejs)
+* [ ] Query Builder và Eloquent ORM
+* [ ] Form Request and Validation
+* [ ] Route/Restful API
+* [ ] Truyền biến qua route, route share...
+* [ ] Một số tính năng đặc biệt: Tinker, Migration, Form in Laravel, Autopagination,...
+* [ ] Nói về các package open source của Laravel
 Các **chức năng của demo** đã thực hiện hoặc dự kiến thực hiện. Nhóm check vào các chức năng đã làm
-* [ ] Chức năng 1
-* [ ] Chức năng 2
+** CRUD: Create - Read - Update - Delete using Restful API Laravel Controller
+* [ ] CRUD sản phẩm 
+* [ ] CRUD danh mục
+* [ ] Sửa xoá các hình thumbnail tại trang chủ theo chủ đề và danh mục tuỳ chỉnh (cả hình ảnh + tên + nội dung)
+* [ ] Admin login, log out
+* [ ] User login, log out
+* [ ] Multi auth (thay vì phải sử dụng các cột role để phân, Laravel đã hỗ trợ multi auth tốt hơn từ các phiên bản gần đây)
+* [ ] Shopping cart with open source package
+* [ ] Ajax delete image khi sửa các hình ảnh mô tả của sản phẩm
+* [ ] Ajax xoá sản phẩm trong giỏ hàng (shopping cart) qua API
+* [ ] Ajax sửa số lượng sản phẩm trong giỏ hàng thông qua API
+* [ ] Đặt hàng, sử dụng một table trong db để lưu trữ.
+* [ ] ....vẫn đang tiếp tục suy nghĩ
 
 ## Demo
 
