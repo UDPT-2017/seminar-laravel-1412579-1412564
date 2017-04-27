@@ -104,26 +104,41 @@
 		<h2>existing user</h2>
 		 <div class="registration_form">
 		 <!-- Form -->
-			<form id="registration_form" action="contact.php" method="post">
-				<div>
-					<label>
-						<input placeholder="email:" type="email" tabindex="3" required>
-					</label>
-				</div>
-				<div>
-					<label>
-						<input placeholder="password" type="password" tabindex="4" required>
-					</label>
-				</div>						
-				<div>
-					<input type="submit" value="sign in" id="register-submit">
-				</div>
-				<div class="forget">
-					<a href="#">forgot your password</a>
-				</div>
+			<form  id="registration_form" role="form" method="POST" action="{{ route('login.submit') }}">
+            <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+				<fieldset>
+                <div class="form-group">
+                    <input class="form-control" value="{!! old('txtUser') !!}" placeholder="Tên đăng nhập" name="txtUser" type="text" autofocus>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Mật khẩu" name="txtPass" type="password" value="{!! old('txtPass') !!}">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input name="remember" type="checkbox" value="Remember Me">Ghi nhớ đăng nhập?
+                    </label>
+                </div>
+                <!-- Change this to a button or input when using this as a form -->
+                <input type="submit" class="btn btn-success" name="btnLogin" value="Đăng nhập">
+            </fieldset>
+
 			</form>
 			<!-- /Form -->
-			</div>
+			@if (session('status'))
+                        <div class="alert alert-danger">
+                               {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{!! $error !!}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+		</div>
 	</div>
 	<div class="clearfix"></div>
 	</div>

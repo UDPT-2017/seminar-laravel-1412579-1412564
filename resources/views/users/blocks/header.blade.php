@@ -11,7 +11,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Gretong a Ecommerce Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
 <link href="{{ url('public/vendor/bootstrap/css/bootstrap.min.css') }}" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary JavaScript plugins) -->
-<script type='text/javascript' src="{{ url('public/js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ url('public/vendor/jquery/jquery.min.js')}}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url('public/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <!-- Custom Theme files -->
 <link href="{{ url('public/css/style.css') }}" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
@@ -80,38 +83,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- start header_right -->
 		<div class="header_right">
 			<div class="rgt-bottom">
-				<div class="log">
-					<div class="login" >
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-						    <div id="loginBox">                
-						        <form id="loginForm">
-						                <fieldset id="body">
-						                	<fieldset>
-						                          <label for="email">Email Address</label>
-						                          <input type="text" name="email" id="email">
-						                    </fieldset>
-						                    <fieldset>
-						                            <label for="password">Password</label>
-						                            <input type="password" name="password" id="password">
-						                     </fieldset>
-						                    <input type="submit" id="login" value="Sign in">
-						                	<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
-						            	</fieldset>
-						            <span><a href="#">Forgot your password?</a></span>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
+				
+				@if(!Auth::guard('user')->check())
 				<div class="reg">
-					<a href="register.html">REGISTER</a>
+				
+					<a href="{{ route('login') }}">LOGIN</a>
+					</div>
+				@endif
+				
+				
+				@if(!Auth::guard('user')->check())
+				<div class="reg">
+					<a href="{{ route('login') }}">REGISTER</a>
 				</div>
+				@endif
+				
+				@if(Auth::guard('user')->check())
+				<div class="reg-logged">
+					<div class="dropdown">
+					    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Xin chào, {{ Auth::guard('user')->user()->username }} !
+					    <span class="caret"></span></button>
+					    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+					      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thông tin tài khoản</a></li>
+					      <li role="presentation" class="divider"></li>
+					      <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('logout') }}">Thoát</a></li>
+					    </ul>
+					  </div>
+				</div>
+				@endif
 			<div class="cart box_1">
 	
 				
 				<div class="clearfix"> </div>
 			</div>
-			<div class="create_btn">
+			<div class="create_btn" style="float:right;">
 				<a href="{{ route('Cart') }}">Giỏ hàng</a>
 			</div>
 			<div class="clearfix"> </div>

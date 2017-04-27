@@ -18,6 +18,11 @@ Route::get('mua-hang/{id}/{alias}',['as' => 'shoppingCart','uses' => 'WelcomeCon
 Route::get('gio-hang',['as' => 'Cart','uses' => 'WelcomeController@Cart']);
 Route::get('xoa-san-pham/{id}',['as' => 'xoasanpham','uses' => 'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as' => 'capnhat','uses' => 'WelcomeController@capnhat']);
+
+Route::get('login',['as' => 'login','uses' => 'Auth\UserLoginController@showLoginForm']);
+Route::post('login', ['as' => 'login.submit', 'uses' => 'Auth\UserLoginController@login']);
+Route::get('/logout', ['as' => 'logout','uses' => 'Auth\UserLoginController@getLogout']);
+
 Route::group(['prefix'=>'admin'],function(){
     Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'AdminController@dashboard']);
 
@@ -56,4 +61,5 @@ Route::group(['prefix'=>'admin'],function(){
 
     Route::get('/', ['as' => 'admin.login', 'uses' => 'Auth\AdminLoginController@showLoginForm']);
     Route::post('/', ['as' => 'admin.login.submit', 'uses' => 'Auth\AdminLoginController@login']);
+    Route::get('/logout', ['as' => 'admin.logout','uses' => 'Auth\AdminLoginController@getLogout']);
 });

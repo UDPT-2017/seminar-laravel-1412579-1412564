@@ -33,19 +33,19 @@
     </div>
         <div class="form-group">
             <label>Thumbnail</label>
-            <input type="file" name="fImages" onchange="myFunction(this.value)" value="{!! old('fImages') !!}">
+            <input type="file" name="fImages"  value="{!! old('fImages') !!}">
         </div>
         <div class="form-group">
             <label>Name</label>
-            <input class="form-control" name="txtName" onchange="myFunction(this.value)" placeholder="Please Enter Username" value="{!! old('txtName') !!}" />
+            <input class="form-control" name="txtName"  placeholder="Please Enter Username" value="{!! old('txtName') !!}" />
         </div>
         <div class="form-group">
             <label>Price</label>
-            <input class="form-control" name="txtPrice" onchange="myFunction(this.value)" placeholder="Please Enter Password" value="{!! old('txtPrice') !!}"/>
+            <input class="form-control" name="txtPrice"  placeholder="Please Enter Password" value="{!! old('txtPrice') !!}"/>
         </div>
         <div class="form-group">
             <label>Intro</label>
-            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtIntro">{!! old('txtIntro') !!}</textarea>
+            <textarea class="form-control" rows="3"  name="txtIntro">{!! old('txtIntro') !!}</textarea>
             <script type="text/javascript">ckeditor("txtIntro")</script>
         </div>
         <div class="form-group">
@@ -55,11 +55,11 @@
         </div>        
         <div class="form-group">
             <label>Product Keywords</label>
-            <input class="form-control" name="txtKeywords" onchange="myFunction(this.value)" placeholder="Please Enter Category Keywords" value="{!! old('txtKeywords') !!}" />
+            <input class="form-control" name="txtKeywords"  placeholder="Please Enter Category Keywords" value="{!! old('txtKeywords') !!}" />
         </div>
         <div class="form-group">
             <label>Product Description</label>
-            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtDescription">{!! old('txtDescription') !!}</textarea>
+            <textarea class="form-control" rows="3"  name="txtDescription">{!! old('txtDescription') !!}</textarea>
             <script type="text/javascript">ckeditor("txtDescription")</script>
         </div>
         

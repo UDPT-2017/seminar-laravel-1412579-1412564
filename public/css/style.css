@@ -627,6 +627,12 @@ input:focus {
   width: 20%;
   margin: 5px 0;
 }
+
+.reg-logged {
+  float: left;
+  width: 40%;
+  margin: 5px 0;
+}
 /* create_btn */
 .create_btn {
   float: left;
