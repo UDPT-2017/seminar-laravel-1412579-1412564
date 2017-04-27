@@ -36,6 +36,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{ url('public/js/simpleCart.min.js') }}"> </script>
 <script src="{{ url('public/js/jquery.etalage.min.js') }}"></script>
 <script src="{{ url('public/js/menu_jquery.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url('public/dist/sweetalert.css') }}">
+<script src="{{ url('public/dist/sweetalert.min.js') }}"></script>
 <script>
 			jQuery(document).ready(function($){
 
@@ -101,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				@if(Auth::guard('user')->check())
 				<div class="reg-logged">
 					<div class="dropdown">
-					    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Xin chào, {{ Auth::guard('user')->user()->username }} !
+					    <button style="background-color: black" class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Xin chào, {{ Auth::guard('user')->user()->username }} !
 					    <span class="caret"></span></button>
 					    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 					      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thông tin tài khoản</a></li>
@@ -116,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 				<div class="clearfix"> </div>
 			</div>
-			<div class="create_btn" style="float:right;">
+			<div class="create_btn" style="">
 				<a href="{{ route('Cart') }}">Giỏ hàng</a>
 			</div>
 			<div class="clearfix"> </div>

@@ -65,6 +65,21 @@
 		echo "'
 		</script>";
 	}
+	function Alert()
+	{
+	    if (Session::has('Alert'))
+	    {
+	       echo '<script type="text/javascript">swal({
+                        title: "Thành công!",
+                        text: "Đã thêm vào giỏ hàng thành công!",
+                        type: "success",
+                        confirmButtonColor: "#05bc05",
+                        confirmButtonText: "Trở về",
+                        closeOnConfirm: true,
+                      });</script>';
+	    }
+
+	}
  ?>
 
  

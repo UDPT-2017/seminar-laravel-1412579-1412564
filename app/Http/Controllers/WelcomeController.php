@@ -46,7 +46,7 @@ class WelcomeController extends Controller
     public function shoppingCart($id){
         $product_buy = DB::table('products')->where('id',$id)->first();
         Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options'=>array('img'=>$product_buy->image)));
-        return redirect()->route('Cart');
+        return redirect()->back()->with('Alert', 'Ahihi');
 
     }
     public function Cart(){

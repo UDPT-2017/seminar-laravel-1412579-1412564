@@ -111,7 +111,7 @@
 	<!-- start content -->
 	<div class="col-md-9 w_content">
 		<div class="women">
-			<a href="#"><h4>{{ $nameCate->name }} - <span>{{ $count }} itemms</span> </h4></a>
+			<a href="#"><h4>{{ $nameCate->name }} - <span>{{ $count }} items</span> </h4></a>
 		     <div class="clearfix"></div>	
 		</div>
 		<!-- grids_of_4 -->
