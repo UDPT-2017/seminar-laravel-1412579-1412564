@@ -28,9 +28,9 @@ Các **nội dung lý thuyết** dự định tìm hiểu. Nhóm liệt kê các
 * [ ] Composer
 * [ ] Blade Template (tương tự view engine bên Nodejs)
 * [ ] Query Builder và Eloquent ORM
-* [ ] Form Request and Validation
-* [ ] Route/Restful API
-* [ ] Truyền biến qua route, route share...
+* [ ] Form Request (khá tương tự body-parser bên Node) and Validation(khá tương tự Express-Validation)
+* [ ] Route/Restful API (khá tương tự Routing Express bên Node)
+* [ ] Truyền biến qua route, route share... (Still tương tự)
 * [ ] Một số tính năng đặc biệt: Tinker, Migration, Form in Laravel, Autopagination,...
 * [ ] Nói về các package open source của Laravel
 * [ ] ...
