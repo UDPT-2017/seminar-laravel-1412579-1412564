@@ -34,8 +34,14 @@ Các **nội dung lý thuyết** dự định tìm hiểu. Nhóm liệt kê các
 * [ ] Một số tính năng đặc biệt: Tinker, Migration, Form in Laravel, Autopagination,...
 * [ ] Nói về các package open source của Laravel
 * [ ] ...
+
+
 Các **chức năng của demo** đã thực hiện hoặc dự kiến thực hiện. Nhóm check vào các chức năng đã làm
+
+
 ** CRUD: Create - Read - Update - Delete using Restful API Laravel Controller
+
+
 * [ ] CRUD sản phẩm 
 * [ ] CRUD danh mục
 * [ ] Sửa xoá các hình thumbnail tại trang chủ theo chủ đề và danh mục tuỳ chỉnh (cả hình ảnh + tên + nội dung)
