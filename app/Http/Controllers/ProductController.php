@@ -11,6 +11,9 @@ use Auth;
 use DB;
 class ProductController extends Controller
 {
+	public function __construct(){
+		$this->middleware('auth:admin');
+	}
     public function getList(){
 		$data=DB::table('products')->orderBy('id','DESC')->get();
 		return view('admin.product.list',compact('data'));

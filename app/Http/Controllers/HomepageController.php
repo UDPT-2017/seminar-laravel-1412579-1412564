@@ -8,9 +8,9 @@ use DB;
 use Storage;
 class HomepageController extends Controller
 {
-	public function dashboard() {
-        return view('admin.dashboard.db');
-    }
+	public function __construct(){
+		$this->middleware('auth:admin');
+	}
     public function getList(){
     	$data = DB::table('homepages')->get();
     	return view('admin.homepage.list',compact('data'));

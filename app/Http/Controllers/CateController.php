@@ -7,7 +7,9 @@ use App\Http\Requests\CateRequest;
 
 use DB;
 class CateController extends Controller {
-
+	public function __construct(){
+		$this->middleware('auth:admin');
+	}
 	public function getAdd(){
 		$parent = DB::table('cates')->orderBy('id','DESC')->get();
 		return view('admin.cate.add',compact('parent'));

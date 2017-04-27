@@ -47,7 +47,7 @@
                         <h3 class="panel-title">Vui lòng đăng nhập </h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="POST" action="{{ route('adminLogin') }}">
+                        <form role="form" method="POST" action="{{ route('admin.login.submit') }}">
                             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                             <fieldset>
                                 <div class="form-group">

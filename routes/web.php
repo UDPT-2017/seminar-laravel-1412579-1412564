@@ -19,7 +19,7 @@ Route::get('gio-hang',['as' => 'Cart','uses' => 'WelcomeController@Cart']);
 Route::get('xoa-san-pham/{id}',['as' => 'xoasanpham','uses' => 'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as' => 'capnhat','uses' => 'WelcomeController@capnhat']);
 Route::group(['prefix'=>'admin'],function(){
-    Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'HomepageController@dashboard']);
+    Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'AdminController@dashboard']);
 
     Route::group(['prefix'=>'cate'],function(){
         //route get list
@@ -53,4 +53,7 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('edit/{id}', ['as' => 'admin.homepage.getEdit', 'uses' => 'HomepageController@getEdit']);
         Route::post('edit/{id}', ['as' => 'admin.homepage.postEdit', 'uses' => 'HomepageController@postEdit']);
      });
+
+    Route::get('/', ['as' => 'admin.login', 'uses' => 'Auth\AdminLoginController@showLoginForm']);
+    Route::post('/', ['as' => 'admin.login.submit', 'uses' => 'Auth\AdminLoginController@login']);
 });
