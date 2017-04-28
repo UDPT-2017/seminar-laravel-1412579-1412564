@@ -4,7 +4,7 @@
 
 Thành viên:
 * [ ] **1412579** Vũ Minh Trí (boyvmt)
-* [ ] **1412564** Trần Thuỳ Bích Trâm (tên tài khoản github)
+* [ ] **1412564** Trần Thuỳ Bích Trâm (bichtramtran)
 
 URL: **Link github page**
 
