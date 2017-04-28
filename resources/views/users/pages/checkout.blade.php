@@ -22,7 +22,7 @@
 			
 			 
 			 <div class="clearfix"></div>
-			 <a class="order" href="#">Đặt hàng</a>
+			 <a class="order" href="{{ route('dathang') }}">Đặt hàng</a>
 			</div>
 		<h1>Giỏ hàng </h1>
 		<div class="alert" style="color: green"></div>

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Request;
 use DB;
 use Cart;
+use Auth;
 class WelcomeController extends Controller
 {
     public function Homepage(){
@@ -71,6 +72,25 @@ class WelcomeController extends Controller
             echo 1;
         }
         
+    }
+    public function orderProduct(){
+        if(!Auth::guard('user')->check()){
+            return redirect()->route('login');
+        }
+        $content = Cart::content();
+        foreach ($content as $key => $item) {
+            $insert = [
+                'user_id' => Auth::guard('user')->user()->id,
+                'product_id' => $item->id,
+                'qty' => $item->qty,
+                'total' => $item->qty*$item->price,
+                "created_at" =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                "updated_at" => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+            ];
+            DB::table('orders')->insert($insert);
+        }
+        Cart::destroy();
+        return redirect()->back()->with('alertOrder', 'Ahihi');
     }
 }
 

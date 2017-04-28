@@ -15,6 +15,9 @@ Route::get('/', ['as'=>'homepage','uses'=>'WelcomeController@Homepage']);
 Route::get('danh-muc/{id}/{alias}', ['as'=>'category','uses'=>'WelcomeController@Category']);
 Route::get('san-pham/{id}/{alias}', ['as'=>'productDetail','uses'=>'WelcomeController@productDetail']);
 Route::get('mua-hang/{id}/{alias}',['as' => 'shoppingCart','uses' => 'WelcomeController@shoppingCart']);
+
+Route::get('dat-hang', ['as' => 'dathang','uses' => 'WelcomeController@orderProduct']);
+
 Route::get('gio-hang',['as' => 'Cart','uses' => 'WelcomeController@Cart']);
 Route::get('xoa-san-pham/{id}',['as' => 'xoasanpham','uses' => 'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as' => 'capnhat','uses' => 'WelcomeController@capnhat']);
@@ -22,6 +25,7 @@ Route::get('cap-nhat/{id}/{qty}',['as' => 'capnhat','uses' => 'WelcomeController
 Route::get('login',['as' => 'login','uses' => 'Auth\UserLoginController@showLoginForm']);
 Route::post('login', ['as' => 'login.submit', 'uses' => 'Auth\UserLoginController@login']);
 Route::get('/logout', ['as' => 'logout','uses' => 'Auth\UserLoginController@getLogout']);
+
 
 Route::group(['prefix'=>'admin'],function(){
     Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'AdminController@dashboard']);

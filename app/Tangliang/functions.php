@@ -80,6 +80,21 @@
 	    }
 
 	}
+	function alertOrder()
+	{
+	    if (Session::has('alertOrder'))
+	    {
+	       echo '<script type="text/javascript">swal({
+                        title: "Thành công!",
+                        text: "Đã thêm vào giỏ hàng thành công!",
+                        type: "success",
+                        confirmButtonColor: "#05bc05",
+                        confirmButtonText: "Trở về",
+                        closeOnConfirm: true,
+                      });</script>';
+	    }
+
+	}
  ?>
 
  

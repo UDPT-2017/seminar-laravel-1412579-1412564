@@ -24,16 +24,16 @@ Yêu cầu **bắt buộc**
 * [ ] Tạo github page để viết lại báo cáo cho nội dung đề tài tìm hiểu
 
 Các **nội dung lý thuyết** dự định tìm hiểu. Nhóm liệt kê các nội dung đã làm được vào bên dưới và check vào các nội dung đã tìm hiểu được.
-* [ ] MVC trong Laravel
-* [ ] Composer
-* [ ] Blade Template (tương tự view engine bên Nodejs)
-* [ ] Query Builder và Eloquent ORM
-* [ ] Form Request (khá tương tự body-parser bên Node) and Validation(khá tương tự Express-Validation)
-* [ ] Route/Restful API (khá tương tự Routing Express bên Node)
-* [ ] Truyền biến qua route, route share... (Still tương tự)
-* [ ] Một số tính năng đặc biệt: Tinker, Migration, Form in Laravel, Autopagination,...
-* [ ] Nói về các package open source của Laravel
-* [ ] ...
+* [x] MVC trong Laravel
+* [x] Composer
+* [x] Blade Template (tương tự view engine bên Nodejs)
+* [x] Query Builder và Eloquent ORM
+* [x] Form Request (khá tương tự body-parser bên Node) and Validation(khá tương tự Express-Validation)
+* [x] Route/Restful API (khá tương tự Routing Express bên Node)
+* [x] Truyền biến qua route, route share... (Still tương tự)
+* [x] Một số tính năng đặc biệt: Tinker, Migration, Form in Laravel, Autopagination,...
+* [x] Nói về các package open source của Laravel
+* [x] ...
 
 
 Các **chức năng của demo** đã thực hiện hoặc dự kiến thực hiện. Nhóm check vào các chức năng đã làm
@@ -42,18 +42,18 @@ Các **chức năng của demo** đã thực hiện hoặc dự kiến thực hi
 ** CRUD: Create - Read - Update - Delete using Restful API Laravel Controller
 
 
-* [ ] CRUD sản phẩm 
-* [ ] CRUD danh mục
-* [ ] Sửa xoá các hình thumbnail tại trang chủ theo chủ đề và danh mục tuỳ chỉnh (cả hình ảnh + tên + nội dung)
-* [ ] Admin login, log out
-* [ ] User login, log out
-* [ ] Multi auth (thay vì phải sử dụng các cột role để phân, Laravel đã hỗ trợ multi auth tốt hơn từ các phiên bản gần đây)
-* [ ] Shopping cart with open source package
-* [ ] Ajax delete image khi sửa các hình ảnh mô tả của sản phẩm
-* [ ] Ajax xoá sản phẩm trong giỏ hàng (shopping cart) qua API
-* [ ] Ajax sửa số lượng sản phẩm trong giỏ hàng thông qua API
-* [ ] Đặt hàng, sử dụng một table trong db để lưu trữ.
-* [ ] ....vẫn đang tiếp tục suy nghĩ
+* [x] CRUD sản phẩm 
+* [x] CRUD danh mục
+* [x] Sửa xoá các hình thumbnail tại trang chủ theo chủ đề và danh mục tuỳ chỉnh (cả hình ảnh + tên + nội dung)
+* [x] Admin login, log out
+* [x] User login, log out
+* [x] Multi auth (thay vì phải sử dụng các cột role để phân, Laravel đã hỗ trợ multi auth tốt hơn từ các phiên bản gần đây)
+* [x] Shopping cart with open source package
+* [x] Ajax delete image khi sửa các hình ảnh mô tả của sản phẩm
+* [x] Ajax xoá sản phẩm trong giỏ hàng (shopping cart) qua API
+* [x] Ajax sửa số lượng sản phẩm trong giỏ hàng thông qua API
+* [x] Đặt hàng, sử dụng một table trong db để lưu trữ.
+* [ ] ...
 
 ## Demo
 
@@ -66,7 +66,7 @@ Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Tri M.Vu - Tram T.T.Tran]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
