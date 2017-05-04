@@ -85,5 +85,8 @@
 			<p>Copyrights © 2015 Gretong. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
 	</div>
 </div>
+{{ Alert() }}
+{{ alertOrder() }}
+
 </body>
 </html>

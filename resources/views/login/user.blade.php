@@ -47,14 +47,14 @@
                         <h3 class="panel-title">Vui lòng đăng nhập </h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="POST" action="{{ route('userLogin') }}">
+                        <form role="form" method="POST" action="{{ route('login.submit') }}">
                             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Tên đăng nhập" name="txtUser" type="text" autofocus>
+                                    <input class="form-control" value="{!! old('txtUser') !!}" placeholder="Tên đăng nhập" name="txtUser" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Mật khẩu" name="txtPass" type="password" value="">
+                                    <input class="form-control" placeholder="Mật khẩu" name="txtPass" type="password" value="{!! old('txtPass') !!}">
                                 </div>
                                 <div class="checkbox">
                                     <label>

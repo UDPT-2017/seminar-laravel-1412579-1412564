@@ -3,41 +3,37 @@ $.ajaxSetup({
 
 
 $(document).ready(function(){
-    $('#form-submit').submit(function(){
-        window.onbeforeunload = null;
-        var timing = $("#timer").text().replace(/:/g,'');
-        $('#tgconlai').val(timing);
-        swal("Hoàn thành!", "Chúc mừng bạn đã hoàn thành bài thi!", "success");
-    });
-    $('#changeInfo').click(function(event){
-            if(!$('#memberTwo').val() || !$('#captainEmail').val() || !$('#captainPhone').val() || !$('#memberOne').val() || !$('#captainEmail').val() || !$('#teamName').val() )
-            {
-                swal({
-                  title: "Xin lỗi!",
-                  text: "Vui lòng nhập đầy đủ các thông tin trước khi xác nhận!",
-                  type: "error",
-                  confirmButtonColor: "#DD6B55",
-                  confirmButtonText: "Trở về",
-                  closeOnConfirm: false,
-                });
-                event.preventDefault();
-            }
-        });
-      $('#changePass').click(function(event){
-          if($('#newpass').val() != $('#confirmnewpass').val() )
-          {
-              swal({
-                title: "Xin lỗi!",
-                text: "Mật khẩu mới và xác nhận mật khẩu mới không giống nhau, vui lòng kiểm tra lại!",
-                type: "error",
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Trở về",
-                closeOnConfirm: false,
-              });
-              event.preventDefault();
-          }
-      });
+  $("#addImages").click(function(){
+    $("#insert").append("<div class='form-group'><input type='file' name='fEditDetail[]'></div>");
+  });
 });
+
+$(document).ready(function(){
+  $("a#del_img").on('click',function(){
+    var url = '../delimg/';
+    var _token = $("form[name='frmEditProduct']").find("input[name='_token']").val();
+    var idHinh = $(this).parent().find("img").attr('idHinh');   
+    var img = $(this).parent().find("img").attr('src');
+    var rid = $(this).parent().find("img").attr('id');
+    //alert(img);
+    $.ajax({
+      url: url + idHinh,
+      type: 'GET',
+      cache: false,
+      data:{"_token":_token,"idHinh":idHinh,"urlHinh":img},
+      success: function (data){
+        if(data == 1){
+          $("#"+rid).remove();
+        }else{
+          alert("Không thể xoá hình ảnh !!!");
+        }
+      }
+    });
+    //window.confirm('Có chắc chắn muốn xoá hình ảnh không?')
+  })
+});
+
+
 
 
 function xacnhanxoa(msg){

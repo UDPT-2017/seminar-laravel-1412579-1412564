@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="{{ url('public/smac.ico')}}">
-    <title>CLB Học Thuật Khoa Y ĐHQG TPHCM - School of Medicine Academic Club - SMAC</title>
+    <link rel="shortcut icon" href="{{ url('public/favicon.ico')}}">
+    <title>Gretong Admin Dashboard</title>
     <link rel="stylesheet" type="text/css" href="{{ url('public/dist/sweetalert.css') }}">
     <script src="{{ url('public/dist/sweetalert.min.js') }}"></script>
     
@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">CLB Học Thuật Khoa Y ĐHQG TPHCM - School of Medicine Academic Club - SMAC</a>
+                <a class="navbar-brand" href="index.html">Gretong Admin Dashboard</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -73,11 +73,11 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> </a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> {{ Auth::user()->username }} </a>
                         </li>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{!! url('auth/logout') !!}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{!! route('admin.logout') !!}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -101,33 +101,41 @@
                         
                         </li> -->
                         <li>
-                            <a href=""><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{!! URL::route('admin.dashboard') !!}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Danh mục<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="">List Category</a>
+                                    <a href="{!! URL::route('admin.cate.getList') !!}">Danh sách danh mục</a>
                                 </li>
                                 <li>
-                                    <a href="">Add Category</a>
+                                    <a href="{!! URL::route('admin.cate.getAdd') !!}">Thêm một danh mục mới</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="">List Product</a>
+                                    <a href="{!! URL::route('admin.product.getList') !!}">Danh sách sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="">Add Product</a>
+                                    <a href="{!! URL::route('admin.product.getAdd') !!}">Thêm sản phẩm mới</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
+                        <li>
+                            <a href="#"><i class="fa fa-home fa-fw"></i> Trang chủ<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!! URL::route('admin.homepage.getList') !!}">Sửa tiêu đề và nội dung</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                     
                     </ul>
                 </div>
@@ -138,9 +146,34 @@
 
      
              <!--Content here-->
-             @yield('content')
+            
     </div>
-    
+    <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">@yield('controller')
+                            <small>@yield('action')</small>
+                        </h1>
+                    </div>
+                    <div class="col-lg-12">
+                        @if (Session::has('flash_massage'))
+                            <div class="alert alert-{!! Session::get('flash_level') !!}">
+                                {!! Session::get('flash_massage') !!}
+                            </div>
+                        @endif
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    <!-- START -  Đây là phần chứa content trong dashboard-->
+                    @yield('content')
+                     <!-- END -  Đây là phần chứa content trong dashboard-->
+
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+</div>
     <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="{{ url('public/vendor/jquery/jquery.min.js')}}"></script>
@@ -163,11 +196,9 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ url('public/dist/js/sb-admin-2.js')}}"></script>
     <script src="{{ url('public/js/myScript.js') }}"></script>
-    <script src="{{ url('public/js/updateLuotThi.js') }}"></script>
-    <script src="{{ url('public/js/delimg.js') }}"></script>
     <script>
     $(document).ready(function() {
-        $('#dataTables-1').DataTable({
+        $('#dataTables-example').DataTable({
             responsive: true
         });
         $('#dataTables-2').DataTable({

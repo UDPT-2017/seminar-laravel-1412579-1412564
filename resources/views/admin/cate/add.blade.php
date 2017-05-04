@@ -1,13 +1,9 @@
-@extends('admin.master')
+@extends('admin.index')
 @section('controller','Category')
-@section('action','List')
+@section('action','Add')
 @section('content')
 
-<script type="text/javascript">
-    f($("form-control").val()){
-        alert("ahihi");
-    }
-</script>
+
 <!-- /.col-lg-12 -->
 <div class="col-lg-7" style="padding-bottom:120px">
 
@@ -22,7 +18,7 @@
     </div>
 @endif
 
-    <form action="{!! route('admin.cate.getAdd') !!}" method="POST">
+    <form action="{!! route('admin.cate.postAdd') !!}" method="POST">
         <input type="hidden" name="_token" value="{!! csrf_token() !!}">
         <div class="form-group">
             <label>Category Parent</label>
@@ -31,19 +27,17 @@
                 <?php 
                     cate_parent($parent);
                     ?>
-                <!--
-                @foreach($parent as $cat)
-                <option value="">{!! $cat["name"] !!}</option>
-                @endforeach-->
+                
+            
             </select>
         </div>
         <div class="form-group">
             <label>Category Name</label>
-            <input class="form-control"  name="txtCateName" placeholder="Please Enter Category Name" onchange="myFunction(this.value)" value="{!! old('txtCateName') !!} " />
+            <input class="form-control"  name="txtCateName" placeholder="Please Enter Category Name"  value="{!! old('txtCateName') !!} " />
         </div>
         <div class="form-group">
             <label>Category Order</label>
-            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Order" onchange="myFunction(this.value)" value="{!! old('txtOrder') !!} "  />
+            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Order"  value="{!! old('txtOrder') !!} "  />
         </div>
         <div class="form-group">
             <label>Category Keywords</label>
@@ -51,7 +45,7 @@
         </div>
         <div class="form-group">
             <label>Category Description</label>
-            <textarea class="form-control" rows="3" onchange="myFunction(this.value)" name="txtDescription">{!! old('txtDescription') !!} </textarea>
+            <textarea class="form-control" rows="3" name="txtDescription">{!! old('txtDescription') !!} </textarea>
         </div>
         <div class="form-group">
             <label>Category Status</label>
@@ -62,8 +56,7 @@
                 <input name="rdoStatus" value="2" type="radio">Invisible
             </label>
         </div>
-        <button type="submit" onclick="return xacnhan('Lưu sản phẩm?')" class="btn btn-default">Category Add</button>
-        <button type="reset" class="btn btn-default">Reset</button>
+        <button type="submit" onclick="return xacnhan('Lưu sản phẩm?')" class="btn btn-success">Category Add</button>
     <form>
 </div>
 
