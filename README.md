@@ -6,8 +6,8 @@ Thành viên:
 * [ ] **1412579** Vũ Minh Trí (boyvmt)
 * [ ] **1412564** Trần Thuỳ Bích Trâm (bichtramtran)
 
-URL: **Link github page**
-
+URL Github Page: **https://boyvmt.github.io/1412579-1412564.github.io/**
+URL Demo Website: **http://trivuit.com/**
 ## Yêu cầu
 
 Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm vào chức năng theo mẫu. Mục nào ko có MSSV là tính điểm theo nhóm. Cần sắp xếp các chức năng bên dưới theo thứ tự MSSV đã thực hiện.

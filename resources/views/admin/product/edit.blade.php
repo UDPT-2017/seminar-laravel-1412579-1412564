@@ -48,7 +48,7 @@
         </div>
         <div class="form-group">
             <label>Price</label>
-            <input class="form-control" name="txtPrice"  value="{!! old('txtPrice',isset($product) ? $product->price : null) !!}" placeholder="Please Enter Price" />
+            <input class="form-control" name="txtPrice"  value="{{ old('txtPrice',isset($product) ? $product->price : null) }}" placeholder="Please Enter Price" />
         </div>
         <div class="form-group">
             <label>Intro</label>

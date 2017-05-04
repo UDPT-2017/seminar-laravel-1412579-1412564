@@ -71,9 +71,9 @@
     <div class="col-md-4">
         <div class="form-group">
             @for($i=1;$i<=10;$i++)
-            <br>
-            <label>Image Product Detail {!! $i !!}</label>
-            <input type="file" name="fProductDetail[]">
+                <br>
+                <label>Image Product Detail {!! $i !!}</label>
+                <input type="file" name="fProductDetail[]">
             @endfor
         </div>
 </div>
