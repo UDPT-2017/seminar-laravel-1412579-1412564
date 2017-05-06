@@ -6,7 +6,7 @@ Thành viên:
 * [ ] **1412579** Vũ Minh Trí (boyvmt)
 * [ ] **1412564** Trần Thuỳ Bích Trâm (bichtramtran)
 
-URL Github Page: **https://boyvmt.github.io/1412579-1412564.github.io/**
+URL Github Page: **https://udpt-2017.github.io/seminar-laravel-1412579-1412564/**
 
 URL Demo Website: **http://trivuit.com/**
 ## Yêu cầu
