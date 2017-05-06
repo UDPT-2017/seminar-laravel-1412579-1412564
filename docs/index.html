@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>1412579 - 1412564 | Seminar | Tìm hiểu Laravel Framework</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body class="body-green">
+<style>
+    .center {
+    display: block;
+    margin: 0 auto;
+}
+    p{
+        text-align: justify;
+    }
+</style>
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Laravel</span><span class="text-bold"> framework</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li><a href="">1412579 - 1412564</a></li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Laravel Framework Version 5.4</h1>
+                    <div class="meta"><i class="fa fa-clock-o"></i>03/05/2017</div>
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+                            <section id="download-section" class="doc-section">
+                                <h2 class="section-title">Giới thiệu</h2>
+                                <div class="section-block">
+                                    <p>Đây là github-page được viết bởi 1412579 - Vũ Minh Trí và 1412564 - Trần Thuỳ Bích Trâm với nội dung chính là tìm hiểu về Laravel Framework Version 5.4, tất cả nội dung tìm hiểu được tổng kết và sử dụng cho môn học Ứng dụng phân tán TH2014 do thầy Hoàng Anh Tú phụ trách. 
+                                    <br>
+                                    Khoa Công nghệ thông tin - Trường ĐH Khoa Học Tự Nhiên TPHCM
+                                    </p>
+                                    <a href="https://github.com/boyvmt/1412579-1412564.github.io" class="btn btn-green" target="_blank"><i class="fa fa-download"></i> View on Github</a>
+                                </div>
+                            </section><!--//doc-section-->
+
+
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">MVC trong Laravel Framework</h2>
+                                <div id="step1"  class="section-block">
+                                    <h3 class="block-title">Giới thiệu về MVC</h3>
+                                    <div class="section-block">
+                                        <img src="images/MVC.png" alt="">
+
+                                        <p>
+                                            Điều đầu tiên nói đến đó chính là mô hình MVC, đây là mô hình phổ biến mà hầu hết các framework đều sử dụng, ngoài ra chúng ta còn có thể nhắc đến CodeIgniter, sử dụng MVC - một mô hình nâng cấp từ MVC. Vậy chúng ta hãy thử tìm hiểu MVC của Laravel nó như thế nào nhé!!!
+                                        </p>
+                                        <div class="col-md-12">
+                                                <h6>MVC là mô hình 3 lớp với ba thành phần chính:</h6>
+                                                <ul class="list">
+                                                    <li>Model là nơi chưa các nghiệp vụ logic, các phương thức thức xử lý, tuy nhiên đa phần model là nơi chúng ta sử dụng để truy xuất database.</li>
+                                                    <li>View là hiển thị các giao diện của website dựa vào hành động của người dùng, là chính các file HTML của chúng ta. Trong Laravel cũng có một thư mục view riêng.</li>
+                                                    <li>Controller chính là nơi nhận request của người dùng, từ đó có thể gửi lệnh cho Model hoặc View tùy vào request của người dùng.</li>
+                                                </ul>
+                                        </div>
+                                        <p>Có thể hiểu dễ hơn, Controller chính là nơi nhận lệnh từ người dùng, nếu người dùng thực hiện yêu cầu phải truy xuất xuống database, khi đó Controller sẽ gửi lệnh xuống Model, Model thực hiện yêu cầu của Controller sau đó lại ngược lại Controller, Controller nhận được dữ liệu và chuyển về View, từ đó View sẽ gửi thông tin dạng giao diện cho người dùng. Ngoài ra nếu yêu cầu không liên quan tới database thì Controller sẽ chuyển hướng thẳng về view mà không cần gửi lệnh cho Model.</p>
+                                        <p>MVC giúp cho chúng ta quản lý mã nguồn dễ hơn, dễ nâng cấp và bảo trì source code của mình, tạo ra một chuẩn giúp cho teamwork tốt hơn, thống nhất trên một khuân khổ, tránh tình trạng "râu ông này cắm cằm bà kia" khi nhiều người code một project, và nhiều hơn thế nữa</p>
+                                    </div>
+                                </div><!--//section-block-->
+
+
+                                <div id="step2"  class="section-block">
+                                    <h3 class="block-title">MVC trong Laravel Framework</h3>
+                                    <div class="section-block">
+                                        <p>Về cơ bản, Laravel đã cung cấp cho ta một mô hình MVC quá tuyệt vời, chúng ta không phải làm quá nhiều việc khi chúng ta code "PHP thuần" nữa. Với các thành phần trong mô hình MVC được đặt rất rõ ràng và người dùng dễ dàng thao tác với mô hình MVC. 
+                                        </p>
+                                        <img src="images/MVC-Laravel.png" class="img-responsive center" alt="">
+                                        <div class="col-md-12">
+                                                <h6>Trong Laravel, chúng ta hãy chú ý tới những thư mục được Laravel tạo sẵn, nơi mà chúng ta sẽ thực hiện đúng mô hình MVC.</h6>
+                                                <ul class="list">
+                                                    <li>
+                                                        <p>Thư mục <b>resources</b>: Đây là thư mục nơi mà chúng ta chứa các file giao diện, cụ thể là sẽ nằm trong thư mục view, Laravel cung cấp cho chúng ta thao tác gọi view rất đơn giản, nó được mặc định trong Laravel nên chúng ta không cần phải cấu hình một đường dẫn link tới thư mục này. Ngoài ra còn có các thư mục khác dùng để upload file, hoặc chứa thông tin giao diện đa ngôn ngữ và nơi chưa các file Front-end (tuy nhiên đa phần chúng ta đều để các file Front-end tại thư mục Public)</p>
+                                                        <img src="images/1.png" class="img-responsive center" alt="">
+                                                        <img src="images/2.png" class="img-responsive center" alt="">
+                                                        <img src="images/3.png" class="img-responsive center" alt="">
+                                                    </li>
+                                                    <li>
+                                                        <p>Thư mục <b>public</b>: đây là thư mục đúng nghĩa như cái tên của nó, <b>public</b> là nơi ta chứa các file cần thiết, chả hạn như đối với mình thì đây là nơi mình sử dụng để chứa các file <i>CSS</i>, <i>JS</i>, và một số hình ảnh upload được mình lưu tại đây.</p>
+                                                        <img src="images/4.png" class="img-responsive center" alt="">
+                                                        <img src="images/5.png" class="img-responsive center" alt="">
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            Thư mục <b>app</b> - nơi chưa đựng những gì tinh tuý nhất trong Laravel: quả thật vậy, đây chính là nơi nòng cốt của cả trang web, trong thư mục này, chúng chứa toàn bộ những những xử lý của chúng ta thông qua <i>Http\Controller</i> cũng như chứa các file <i>Model</i> giúp chúng ta thao tác cơ sở dữ liệu. Ngoài ra nó còn chứa các file Request - nơi chúng ta có thể sử dụng Validation mà Laravel cung cấp sẵn cũng như middleware giúp chúng ta thiết lập Authentication cho ứng dụng.
+                                                        </p>
+                                                        <img src="images/6.png" class="img-responsive center" alt="">
+                                                        <img src="images/7.png" class="img-responsive center" alt="">
+                                                        <img src="images/8.png" class="img-responsive center" alt="">
+                                                    </li>
+                                                </ul>
+                                                <p>Laravel (phiên bản 5.4) cung cấp cho chúng thêm một thành phần khác đó chính là Route, nơi định tuyến, dẫn đường cho các HTTP Request được gửi tới nơi mà nó mong muốn. Với thư mục Route thì nó sẽ giúp cho việc quản lý các định tuyến được tốt hơn.</p>
+                                                <p>Đối với phiên bản 5.4, Laravel đã đưa Route ra một thư mục riêng thay vì tích hợp nó vào thư mục App như phiên bản trước (cụ thể phiên bản 5.0), cùng với đó chia Route thành các file khác nhau thay vì gộp như cũ (api, channel, console, web), giúp quản lý tất cả các Route tốt hơn.</p>
+                                        </div>
+                                    </div>
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+
+                            
+
+                            <section id="icons-section" class="doc-section">
+                                <h2 class="section-title">Composer và thao tác cmd trong Laravel</h2>
+                                <div class="section-block">
+                                    <img src="images/composer.jpg" class="img-responsive center" alt=""
+                                    <p><i>Composer</i> là một công cụ cho phép chúng ta quản lý các thư viện của PHP tốt hơn, nó cho phép chúng ta tải về các gói thư viện cần thiết chỉ bằng các dòng lệnh, và sau đó nó sẽ giúp ta tải về mà không cần phải sử dụng quá nhiều thao tác. Phần này em thấy khá giống với NPM của Node, đều cho phép chúng ta tải các thư viện (module) nhanh và dễ dàng.
+                                    </p>
+                                    <p>Về cơ bản không có quá nhiều thứ để nói về <i>Composer</i>, chúng ta sử dụng nó để tải các thư viện của PHP, thay vì phải tải bằng tay, mỗi project ta sẽ phải tải về những thư viện khi chúng ta sử dụng, vì <i>Composer</i> sẽ chỉ cài đặt tại chính thư mục chứa project đó. </p>
+                                    <p>Ngoài <i>omposer</i> thì Laravel cũng cung cấp cho chúng ta một thứ khác, đó chính là <i>artisan</i>. Đây là một CLI được Laravel tích hợp giúp Lập trình viên tạo những file cần thiết cực kỳ nhanh chóng và hữu dụng khi phát triển ứng dụng. 
+                                    </p>
+                                    <p>Ví dụ một cụ thể dễ dàng, bạn hoàn toàn có thể tạo ra các file _model_ hoặc _controller_ thông qua <b>artisan</b> chả hạn. Hoặc thứ mà chúng ta hay dùng đến nhất mỗi khi phát triển một ứng dụng web đó chính là _database_, <b>artisan</b> cũng giúp chúng ta những thao tác thông qua _Migration_ để tạo và phát triển _database_ nhanh hơn. Dưới đây là một số các câu lệnh <b>artisan</b> hỗ trợ, bạn có thể kiểm tra danh sách câu lệnh này thông qua cú pháp <i><b>php artisan list</b></i></p>
+                                    <img src="images/9.png" class="img-responsive center" alt="">
+                                </div><!--//section-block-->
+                                
+                            </section><!--//doc-section-->
+
+                            <section id="video-section" class="doc-section">
+                                <h2 class="section-title">Blade Template</h2>
+                                <div class="section-block">
+                                    <h3 >Templade Engine là gì?</h3>
+                                    <p>Đơn giản Template đó chính là một mẫu ngôn ngữ trình bày, giúp chúng ta tách biệt code PHP ra khỏi code HTML.</p>
+                                    <h3>Blade Templates trong Laravel</h3>
+                                    <p>Blade là một <i>templating engine</i> đơn giản và được Laravel tích hợp vào cho mình. Ngoài việc nó cung cấp những câu lệnh trong view, nó không cấm bạn sử dụng PHP trong view như các <i>template engine</i> khác. Tất cả các views của <i>Blade</i> sẽ được compile thành mã PHP thuần, cho nên nó sẽ không làm tăng quá nhiều chi phí của ứng dụng. </p>
+                                    <h5><i>Mặc định chúng ta sẽ đặt tên cho các file dạng đuôi _*.blade.php_ (với * là tên file của bạn)</i></h5>
+                                    <h3>Chúng ta có thể làm gì với <b>Blade?</b></h3>
+                                    <p>Blade giúp ta quản lý các file view tốt hơn, khi chúng ta thiết kế view, có rất nhiều đoạn code bị lặp lại, vì vậy khi chúng ta chỉnh sửa lại một file nào đó, chúng ta buộc phải chỉnh sửa lại tất cả các view chứa nó.</p>
+                                    <p>Vì vậy Blade cung cấp cho chúng ta cơ chế <i>thừa kế template</i>, chúng ta có thể tách những đoạn code bị trùng lắp ra một file mới và bạn chỉ cần gọi file đó tại các view chúng ta sử dụng. Khi cần chỉnh sửa, ta chỉ cần chỉnh một file và tất cả các view đều được update thay vì phải chỉnh sửa toàn bộ các view.</p>
+                                    <p><i>Xét một ví dụ cơ bản về Blade Templade:</i></p>
+                                    <img src="images/10.png" class="img-responsive center" alt="">
+                                    <p>Như hình ảnh phía trên, mình đã tách <i>header</i> và <i>footer</i> của website chính ra riêng, với view <i>index.blade.php</i> đơn giản nó chỉ chứa lời gọi đến 2 file trên và <i>@yield('content')</i> là nơi được sử dụng để hiển thị dữ liệu ở một vị trí đặt trước. Chả hạn như tại view <i>home.blade.php</i> hình kế thừa view cha là <i>index.blade.php</i>, sau đó mình chỉ cần trích nội dụng cần hiển thị vào <i>@section</i>. Ở trên mình đã nói là <i>@yield</i> sẽ là nơi nội dung của những section này được hiển thị.</p>
+                                    <img src="images/11.png" class="img-responsive center" alt="">
+                                    <p>Vậy không sử dụng PHP trong view thì chúng ta hiển thị dữ liệu được query từ <i>database</i> bằng cách nào? Blade chắc chắn cung cấp cho chúng ta một chức năng giúp chúng ta làm điều này, chúng ta có thể truyền <i>dữ liệu</i> sang view tại <i>controller</i> hoặc trực tiếp tại <i>route</i>, nó sẽ giúp chúng ta quản lý dữ liệu được tốt hơn và minh bạch hơn.</p>
+                                    <p><i>Ví dụ như mình sẽ truyền biến dữ liệu <b>$product</b> sang view để hiển thị nó.</i></p>
+                                    <img src="images/12.png" class="img-responsive center" alt="">
+                                    <p style="text-align: center"><i>Truy vấn từ database tại function Homepage</i></p>
+                                    <img src="images/13.png" class="img-responsive center" alt="">
+                                    <p style="text-align: center"><i>Và hiển thị nó bằng cách <b>foreach</b> từng phần tử trong object đó</i></p>
+                                    <p>Tất nhiên bạn sẽ không bị giới hạn việc truyền bao nhiêu biến sang view, thậm chí bạn có thể sử dụng thẳng <b>cấu trúc php</b> bên trong view nếu bạn thấy cần thiết như ví dụ bên dưới chả hạn</p>
+                                    <img src="images/14.png" class="img-responsive center" alt="">
+                                    <p style="text-align: center"><i>Truy vấn từ database tại trực tiếp trong view</i></p>
+
+                                    <h3>Hiển thị dữ liệu unscape và chưa unespace</h3>
+                                    <h6>Đối với Blade Template, nó đã cung cấp cho chúng ta hai hình thức hiển thị dữ liệu.</h6>
+                                    
+                                    <p>Đối với cách hiển thị dữ liệu bằng dấu <i><b>{{ }}</b></i>, mặc định dữ liệu khi sử dụng cặp dấu này sẽ được gửi qua hàm <i>htmlentities</i>, nhờ vậy mà chúng ta sẽ tránh được tấn công XSS khi kẻ xấu lợi dúng.</p>
+                                    <p>Còn khi bạn sử dụng cặp dấu <i><b>{!! !!}</b></i> thì dữ liệu sẽ không bị espace, mình thường sử dụng cặp dấu này nếu sử dụng CKeditor để soạn thảo và quản lý nội dung của website</p>
+                                    <div class="code-block">
+                                        <h6>Ví dụ</h6>
+                                        <pre><code class="language-php">
+
+The current UNIX timestamp is {{ time() }}.
+
+//unscape data
+Hello, {!! <i>$name</i> !!}.
+
+                                       </code></pre>
+                                    </div><!--//code-block-->
+                                    <img src="images/15.png" class="img-responsive center" alt="">
+                                    <h3>Cấu trúc điều kiện</h3>
+                                    <h6>Ngoài việc cung cấp việc kế thừa và hiển thị dữ liệu, Blade cũng đem lại cho chung ta các tiện ích cho các cấu trúc điều khiển cơ bản như cấu trúc rẽ nhánh, vòng lặp,...</h6>
+                                    <div class="code-block">
+                                        <h6>Một số cấu trúc đơn giản chúng ta có thể thấy được</h6>
+                                        <pre><code class="language-php">
+//Cấu trúc rẽ nhánh
+@if (count($records) === 1)
+    I have one record!
+@elseif (count($records) > 1)
+    I have multiple records!
+@else
+    I don't have any records!
+@endif
+
+//Vòng lòng
+@for ($i = 0; $i < 10; $i++)
+    The current value is {{ $i }}
+@endfor
+
+@foreach ($users as $user)
+    <p>This is user {{ $user->id }}</p>
+@endforeach
+
+@forelse ($users as $user)
+    <li>{{ $user->name }}</li>
+@empty
+    <p>No users</p>
+@endforelse
+
+@while (true)
+    <p>I'm looping forever.</p>
+@endwhile
+
+//unlesss, nhưng mình thường dùng <i>if</i> hơn
+@unless (Auth::check())
+    You are not signed in.
+@endunless
+
+
+                                       </code></pre>
+                                    </div><!--//code-block-->
+                                    <i>Dưới đây là một số ví dụ về cấu trúc điều kiện trong Blade, cũng khá đơn giản phải khôgn nào</i>
+                                    <img src="images/18.png" class="img-responsive center" alt="">
+                                    <br>
+                                    <img src="images/16.png" class="img-responsive center" alt="">
+                                    <br>
+                                    <img src="images/17.png" class="img-responsive center" alt="">
+                                </div><!--//section-block-->
+                            
+                            
+                            </section><!--//doc-section-->
+                            <section id="code-section" class="doc-section">
+                                <h2 class="section-title">Thao tác với CSDL</h2>
+                                <div class="section-block">
+                                    <p>
+                                       Thứ quan trọng hầu như không thể thiếu trong bất cứ một ứng dụng web nào đó chính là cơ sở dữ liệu, Laravel hầu như cũng đã cung cấp cho chúng ta những gì tinh tuý nhất để giúp chúng ta nhanh chóng trong việc truy xuất và chỉnh sửa dữ liệu. 
+                                    </p>
+                                    <p>Laravel sử dụng PDO để kết nối với CSDL.Ngoài ra nó còn cung cấp cho chúng ta hai kiểu truy vấn cơ sở dữ liệu đặc trưng đó là Query Builder và Eloquent ORM. Vậy sự khác nhau của nó là gì? Chúng ta cùng tìm hiểu về nó nhé!</p>
+                                    
+                                </div><!--//section-block-->
+                                <div id="html" class="section-block">
+                                <h3>Query Builder</h3>
+                                    <div class="section-block">
+                                    <p>Query Builder của Laravel cho phép chúng ta truy vấn cơ sở dữ liệu nhanh chóng và tiện lợi. Bạn có thể sử dụng nó để truy vấn bất kỳ cơ sở dữ liệu nào mà nó hỗ trợ.</p>
+                                    <p>Tất nhiên như trên đã nói, nó được sử dụng PDO params binding để bảo vệ ứng dụng của bạn không bị hacker xâm nhập ăn cắp hoặc phá hoại CSDL, chống lại các cuộc tấn công SQL Injection.</p>
+                                    <p>Nói nhiều như vậy, tóm gọn một phần đó chính là Query Builder có thể giúp bạn truy vấn trực tiếp CSDL mà không phải thông qua một thằng nào khác như <i>Eloquent ORM</i>, bạn sẽ không phải khai báo quá nhiều thứ, chỉ cần có CSDL là bạn có thể sử dụng nó rồi.</p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Một số cú pháp đơn giản của Query Builder</h6>
+                                        <pre><code class="language-php">
+//Đây là cú pháp đơn giản nhất giúp bạn lấy toàn bộ các record trong một bảng nào đó.
+$temp = DB::table('tablename')->get();
+
+//Cú pháp đơn giản về điều kiện where
+$temp = DB::table('tablename')->where('id',$id)->get();
+
+//Kết giữa hai bảng với nhau
+$users = DB::table('users')
+            ->join('contacts', 'users.id', '=', 'contacts.user_id')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.*', 'contacts.phone', 'orders.price')
+            ->get();
+//orderBy
+$users = DB::table('users')
+                ->orderBy('name', 'desc')
+                ->get();
+
+//lastest
+$user = DB::table('users')
+                ->latest()
+                ->first();
+
+//và còn rất nhiều thứ khác Query Builder hỗ trợ
+$users = DB::table('users')->count();
+
+$price = DB::table('orders')->max('price');
+
+$price = DB::table('orders')
+                ->where('finalized', 1)
+                ->avg('price');
+
+//insert dữ liệu
+DB::table('users')->insert([
+    ['email' => 'taylor@example.com', 'votes' => 0],
+    ['email' => 'dayle@example.com', 'votes' => 0]
+]);
+
+$id = DB::table('users')->insertGetId(
+    ['email' => 'john@example.com', 'votes' => 0]
+);
+
+//update 
+DB::table('users')
+            ->where('id', 1)
+            ->update(['votes' => 1]);
+
+//delete
+DB::table('users')->delete();
+
+DB::table('users')->where('votes', '>', 100)->delete();
+                                       </code></pre>
+                                    </div><!--//code-block-->
+                                    <i>Một số ví dụ trong Demo</i>
+                                    <img src="images/19.png" class="img-responsive center" alt="">
+                                    <br>
+                                    <img src="images/20.png" class="img-responsive center" alt="">
+                                    <br>
+                                    <img src="images/21.png" class="img-responsive center" alt="">
+                                    <br>
+                                    <img src="images/22.png" class="img-responsive center" alt="">
+                                </div><!--//section-block-->
+                                <div id="css" class="section-block">
+                                <h3>Eloquent ORM</h3>
+                                    <div class="section-block">
+                                    <p>
+                                        Eloquent ORM đi kèm với Laravel cung cấp ActiveRecord đầy đủ, đẹp đẽ và đơn giản để làm việc với database. Mỗi bảng của database sẽ được ánh xạ qua 'Model', và model này được sử dụng để tương tác với bảng.
+                                    </p>
+                                    <p>
+                                        Tuy là vậy, ORM lại khá dài dòng khi chúng ta sử dụng nó, vì nó được ánh xạ qua Model, cho nên đối với tất cả các table trong cơ sở dữ liệu, chúng ta buộc phải khai báo lại thành mỗi Model riêng trên Laravel. Và khi bạn sử dụng, bạn buộc phải gọi Model đó trong Controller để sử dụng.
+                                    </p>
+                                    </div>
+                                    <div class="code-block">
+                                        <h6>Một số cú pháp đơn giản của Eloquent ORM</h6>
+                                        <pre><code class="language-php">
+//Trước hết ta phải gọi User từ App\User
+use App\Cate;
+//select từ bảng Cate
+$parent = Cate::select('id','name','parent_id')->get()->toArray();
+
+//save dữ liệu vào CSDL
+$cate = new Cate;
+$cate->name = $request->txtCateName;
+$cate->alias =  $request->txtCateName;
+$cate->order =  $request->txtOrder;
+$cate->parent_id =  $request->sltParent;
+$cate->keywords =  $request->txtKeywords;
+$cate->description =  $request->txtDescription;
+$cate->save();
+
+//sửa một record nào đó
+$cate = Cate::find($id);
+$cate->name = $request->txtCateName;
+$cate->alias =  $request->txtCateName;
+$cate->order =  $request->txtOrder;
+$cate->parent_id =  $request->sltParent;
+$cate->keywords =  $request->txtKeywords;
+$cate->description =  $request->txtDescription;
+$cate->save();
+
+//xoá một record với id
+$product->delete($id);
+
+//kết giữa hai bảng
+$users = User::with('contacts', 'orders')
+            ->select('users.*', 'contacts.phone', 'orders.price')->get;
+                                    </code></pre>
+                                    </div><!--//code-block-->
+                                    <i>Ví dụ về Model trong Laravel được trích từ Demo</i>
+                                    <img src="images/23.png" class="img-responsive center" alt="">
+                                </div><!--//section-block-->
+
+                                <div id="php" class="section-block">
+                                <h3>Nên chọn cái nào để sử dụng?</h3>
+                                    <div class="section-block">
+                                    <p>Tuỳ vào nhu cầu của mỗi người cũng như mỗi project mà chúng ta lựa chọn cách nào để truy vấn dữ liệu. Đối với mình, mình thường sử dụng Query Builder hơn so với Eloquent ORM.</p>
+                                    <h6>Query Builder</h6>
+                                    <p>Khi ta sử dụng Query Builder, chúng ta không cần phải khai báo các Model, bạn hãy tưởng tượng, nếu bạn không biết một chút gì về cơ sở dữ liệu, hoặc cơ sở dữ liệu của bạn khá lớn chả hạn, thì Query Builder là lựa chọn tốt nhất, bạn chỉ cần biết cấu trúc câu lệnh và các thuộc tính của các bảng thôi thì bạn đã có thể dễ dàng truy vấn dữ liệu rồi. Tuy nhiên có một nhược điểm đó chính là câu lệnh của Query Buildẻ khá dài, nên đôi khi nó khiến code chúng ta dài hơn cũng như nhiều phần hơn.</p>
+                                    <h6>Eloquent ORM</h6>
+                                    <p>Còn đối với Eloquent, chúng ta buộc phải khai báo các Model, vì ORM sẽ ánh xạ qua các Model này để biết được mỗi bảng ở cơ sở dữ liệu được khai báo làm sao, nó sẽ khá mất công nếu bạn có một cơ sở dữ liệu quá lớn, lên đến vài chục hoặc cả trăm bảng, nhưng đổi lại, nó sẽ mang lại cho bạn một cách truy vấn cực kỳ ngon, ngắn và dễ hiểu. Đặc biệt thao tác kết giữa các bảng sẽ dễ dàng và đơn giản hơn so với Query Builder.</p>
+                                    <h6>Ý kiến cá nhân về việc lựa chọn truy vấn giữa Query Builder và Eloquent ORM</h6>
+                                    <p>Tuỳ vào mỗi project, mình vẫn ưu tiên chọn Query Builder hơn so với Eloquent ORM, một phần là do việc mỗi thành viên trong nhóm không phải ai cũng biết rõ về CSDL, hay CSDL quá nhiều bảng khiến cho việc khai báo Model dành cho Eloquent ORM quá phức tạp và mất thời gian. Query Builder sẽ giúp bạn rút ngắn việc khai báo quá nhiều Model hơn, đối với các project nhỏ như Demo Seminar, mình sử dụng Query Builder vì nó không cần phải kết và câu lệnh truy vấn không quá phức tạp, đôi khi đa phần mình chỉ copy và paste mà thôi!.</p>
+                                    <p>Còn đối với Eloquent ORM, nó thực sự tốt khi ta khai báo đầy đủ các Model, nó giúp bạn thao tác với câu truy vấn cực kỳ đơn giản và ngắn gọn, các thao các kết giữa các bảng cực kỳ dễ vì chúng ta đã khai báo sẵn chúng ở Model rồi.</p>
+                                    <h6>Về tốc độ truy vấn</h6>
+                                    <p>Hiện tại chưa có quá nhiều khác biệt nếu chúng ta truy vấn những cơ sở dữ liệu với số lượng record ít, tuy nhiên theo một số tài liệu thì Query Builder sẽ có tốc độ truy vấn tốt hơn so với Eloquent ORM khi những câu truy vấn cần thao tác với dữ liệu lớn.</p>
+                                    <h6>Bảo mật</h6>
+                                    <p>Cũng tương tự như vậy, Query Builder sử dụng PDO nhằm bảo vệ ứng dụng và tránh các lỗi về SQL Injection, còn Eloquent ORM thì không nên chúng ta đã biết chắc thằng Query Builder sẽ bảo mật hơn so với Eloquent ORM.</p>
+                                    </div>
+
+                                </div><!--//section-block-->
+
+                            </section><!--//doc-section-->
+                            <section id="callouts-section" class="doc-section">
+                                <h2 class="section-title">Request</h2>
+                                <div class="section-block">
+                                    <p>Laravel cung cấp cho bạn một <i>Request</i> thực sự rất tuyệt vời, trong bất kỳ một ứng dụng web nào, dữ liệu luôn là thứ quan trọng nhất, nó được cung cấp bởi một form HTML, và Request sẽ giúp chúng ta lấy những dữ liệu này trước khi chúng ta làm việc trên trữ liệu đó.</p>
+                                    <img src="images/request.jpg" class="img-responsive center" alt="">
+                                    <div class="code-block">
+                                        <h6>Một ví dụ nhỏ khi ta dùng Request để lấy dữ liệu các trường trong Form</h6>
+                                        <pre><code class="language-php">
+//CateRequest là validation giúp ta kiểm tra bảo toàn thông tin khi người dùng nhập. Sẽ nói đến ở phần dưới.                          
+public function postAdd(CateRequest $request){
+    DB::table('cates')->insert(
+        [
+            'name' => $request->txtCateName, 
+            'alias' => changeTitle($request->txtCateName),
+            'order' => 1,
+            'parent_id' => $request->sltParent,
+            'keywords' => $request->txtKeywords,
+            'description' => $request->txtDescription,
+            "created_at" =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+            "updated_at" => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+        ]
+            );
+    return redirect()->route('admin.cate.getList')->with(['flash_level'=>'success','flash_massage'=>'Đã thêm thành công Category!!!']);
+}
+                                    </code></pre>
+                                    </div><!--//code-block-->
+                                    <p>Request có nhiệm vụi quản lý các dữ liệu trên Route và truyền dữ liệu đó đến với Controller để xử lý</p>
+                                    <p>Ngoài ra, Request còn cung cấp cho chúng ta rất nhiều phương thức, ví dụ như phương thức giúp chúng ta lấy những thông tin của người dùng như IP ngươi fdùng, IP máy chũ, thông tin trình duyệt,...</p>
+                                    <div class="code-block">
+                                        <h6>Một ví dụ nhỏ về các phương thức của Request</h6>
+                                        <pre><code class="language-php">
+// ví dụ URL https://boyvmt.github.io/1412579-1412564.github.io/seminar/laravel
+$uri = $request->path();
+// trả về seminar/laravel
+echo $uri;
+
+if($request->is('seminar/*')) {
+    // các đường dẫn bắt đầu bằng seminar, với ký tự * để trùng khớp với tất cả các chuỗi
+}
+if($request->is('seminar/laravel')) {
+    echo 'Đây là đường dẫn của bạn https://boyvmt.github.io/1412579-1412564.github.io/' . $request->path();
+}
+
+// ví dụ đường dẫn https://boyvmt.github.io/1412579-1412564.github.io/seminar/laravel?page=2
+$url = $request->url();
+// trả về https://boyvmt.github.io/1412579-1412564.github.io/seminar/laravel
+echo $url;
+//Nó sẽ trả về URL không có query string
+
+//Nếu bạn muốn nó trả về URL có query string luôn thì hãy sử dụng fullurl
+$full_url = $request->fullurl()
+
+//kiểm tra xem phương thức yêu cầu là POST hay GET
+$method = $request->method();
+if ($request->isMethod('post')) {
+    echo 'POST request';
+} else {
+    echo 'GET request';
+}
+
+//Phương thức liên quan tới người dùng của Request
+//Ví dụ bây giờ bạn muốn lấy IP, tên Webbrowser của người dùng thì sao? Request cho phép bạn làm điều đó.
+public function getUserInfo(Request $request){
+    $ip_address = $request->ip();
+    echo '<br>Địa chỉ IP người dùng: ' . $ip_address;
+
+    $server_address = $request->server('SERVER_ADDR');
+    echo '<br>Địa chỉ IP máy chủ: ' . $server_address;
+
+    $url_referer = $request->server('URL_REFERER');
+    echo '<br>Đường dẫn xuất phát: ' . $url_referer;
+
+    $user_agent = $request->header('User-Agent');
+    echo '<br> Thông tin về trình duyệt:' . $user_agent;
+}
+                                   </code></pre>
+                                    </div><!--//code-block-->
+                                </div>
+
+                            </section><!--//doc-section-->
+                            <section id="tables-section" class="doc-section">
+                                <h2 class="section-title">Validation</h2>
+                                <div class="section-block">
+                                    <p>Đây có lẽ một tính năng mà hầu hết các bạn đều đã từng gặp qua, có bao giờ bạn đăng ký một account Facebook chả hạn, bạn quên gõ email, Facebook sẽ báo lại cho ban ngay lập tức là bạn phải nhập Email không? Đó chính là Validation.
+                                    </p>
+                                    <p>
+                                        Validation để làm gì? Validation được tạo ra để kiểm soát thông tin người dùng nhập có chính xác hay không, để đảm bảo rằng hệ thông bạn ghi nhận không phải là thông tin rác. Người dùng có thể quên mất điền vào một chỗ nào đó, bạn sẽ phải thông báo và bắt buộc người dùng phải nhập thông tin được yêu cầu.
+                                    </p>
+                                </div>
+                                <div class="section-block">
+                                    <h5>Validation trong Laravel</h5>
+                                    <p>Laravel đã cung cấp cho chúng ta một hệ thống Validation thực sự rất tuyệt vời và tiện lợi, bạn không cần phải thao tác quá nhiều hoặc viết ra những dòng code dài dòng để kiểm tra dữ liệu nữa. Laravel đã làm hết những gì bạn cần.</p>
+                                    <h5>Vậy thì chúng ta sử dụng Validation Laravel bằng cách nào?</h5>
+
+                                    <h6>Khai báo trực tiếp trong một hàm thuộc Controller</h6>
+
+                                    <p>Đây là một cách chúng ta có thể thao tác với Validation của Laravel, ta sẽ khai báo trực tiếp một validation trong chính một hàm trong Controller mà chúng ta muốn, tuy nhiên sẽ rất khó quản lý được nếu chúng ta có nhiều Validation, và bạn sẽ quên mất nó nằm ở đâu đó thì sao?</p>
+                                    <div class="code-block">
+                                        <h6>Một ví dụ về Validation trực tiếp trong hàm</h6>
+                                        <pre><code class="language-php">
+public function login(Request $request){
+    $this->validate($request,[
+        'txtUser' => 'required',
+        'txtPass' => 'required'],
+        ["txtUser.required"=>"Vui lòng nhập tài khoản",
+        "txtPass.required"=>"Vui lòng nhập mật khẩu"
+        ]);
+
+    if(Auth::guard('admin')->attempt(['username' => $request->txtUser, 'password' => $request->txtPass],$request->remember)){
+        return redirect()->intended(route('admin.dashboard'));
+    }
+    return redirect()->back()->withInput($request->only('username','remember'))->with('status', 'Tài khoản hoặc mật khẩu không chính xác!');
+}
+                                   </code></pre>
+                                    </div><!--//code-block-->
+
+                                    <div class="code-block">
+                                    <h5>Tạo một Request Validation giúp chúng ta quản lý dễ hơn</h5>
+                                    <p>Laravel cũng cung cấp cho bạn một cách khác đó chính là tạo một Request Validation, giúp bạn quản lý từng Validation thuộc từng một Form dữ liệu nào đó, tránh tình trạng bạn phải khai báo trực tiếp trong hàm, và khi khai báo riêng như thế này, bạn chỉ việc mang nó ra và có thể sử dụng ở nhiều hàm có form dữ liệu giống Request Validation này.</p>
+                                    <div class="code-block">
+                                        <h6>CLI Artisan giúp bạn tạo một Request nhanh bằng câu lệnh:</h6>
+                                        <p><code>php artisan make:request *tênrequest</code></p>
+                                    </div><!--//code-block-->
+                                        <h6>Một ví dụ về Validation bằng cách tạo một Request mới</h6>
+                                        <pre><code class="language-php">
+&lt;?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class ProductRequest extends FormRequest
+{
+    public function authorize()
+    {
+        return true;
+    }
+
+    public function rules()
+    {
+        return [
+            'sltParent' =>'numeric|min:1',
+            'txtName' => 'required|unique:products,name',
+            'fImages' => 'required|image'
+        ];
+    }
+    public function messages(){
+        return [
+            'sltParent.min' => 'Vui lòng chọn Category chứa sản phẩm',
+            'fImages.image' => 'Vui lòng chọn file hình ảnh',
+            'txtName.required' => 'Vui lòng nhập tên sản phẩm',
+            'txtName.unique'   => 'Tên sản phẩm đã tồn tại',
+            'fImages.required' => 'Vui lòng chọn ảnh đại diện hoặc ảnh đại diện có kích thước quá lớn'  
+        ];
+    }
+}
+
+//Gọi nó tại Controller
+
+public function postAdd(ProductRequest $request){
+    $imgName = changeTitle(Input::file('fImages')->getClientOriginalName());
+    //echo $imgName;
+    $product_id = DB::table('products')->insertGetId(
+            [
+                "name" =>  $request->txtName,
+                "alias" => changeTitle($request->txtName),
+                "price" => $request->txtPrice,
+                "intro" => $request->txtIntro,
+                "content" => $request->txtContent,
+                "image" => $imgName,
+                "keywords" => $request->txtKeywords,
+                "description" => $request->txtDescription,
+                "user_id" => 1,
+                "cate_id" => $request->sltParent,
+                "created_at" =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                "updated_at" => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+            ]
+        );
+
+    Input::file('fImages')->move('resources/upload/images',$imgName);
+    //echo $product_id;
+    if(Input::hasFile('fProductDetail')){
+        foreach (Input::file('fProductDetail') as $file) {
+            if(isset($file)){
+                DB::table('product_images')->insert(
+                    [
+                        "image" =>  changeTitle($file->getClientOriginalName()),
+                        "product_id" => $product_id,
+                        "created_at" =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                        "updated_at" => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+                    ]
+                );
+                $file->move('resources/upload/details',changeTitle($file->getClientOriginalName()));
+            }
+        }
+        
+    }
+    return redirect()->route('admin.product.getList')->with(['flash_level'=>'success','flash_massage'=>'Đã thêm sản phẩm thành công !!!']);
+    
+}
+                                   </code></pre>
+                                    </div><!--//code-block-->
+                                </div>
+                            <h3>Vậy Validation hỗ trợ những dạng kiểm tra nào?</h3>
+                                <div class="section-block">
+                                    <p>Validation Laravel hỗ trợ rất nhiều, nó bao gồm nhiều quy tắc để bạn có thể dễ dàng quản lý dữ liệu trên Form người dùng tốt hơn, từ việc yêu cầu bắt buộc người dùng nhập thông tin, đến kiểm tra nó có phải là số hay không? Giới hạn min và max, và còn rất nhiều thứ nữa, bạn có thể tham khảo danh sách dưới đây.
+                                    </p>
+                                    <img src="images/validation.png" class="img-responsive center" alt="">
+                                    <br>
+                                    <a href="https://laravel.com/docs/5.4/validation" class="btn btn-green" target="_blank"><i class="fa fa-download"></i> Xem đầy đủ trên trang chủ Laravel</a>
+                                </div>
+                            </section><!--//doc-section-->
+                            <section id="buttons-section" class="doc-section">
+                                <h2 class="section-title">Routing trong Laravel</h2>
+                                <div class="section-block">
+                                    <p>
+                                    Đúng như cái tên của nó, Route trong Laravel có vai trò định tuyến cho cả website của bạn, nó sẽ dẫn đường cho các HTTP Request được gửi từ Client đến Controller hoặc Function mà mình cần xử lý.
+                                    </p>
+									<p>
+										Phải nói thêm đó là Route trong Laravel rất đơn giản, chúng ta không phải nhớ quá nhiều chứ, làm quá nhiều việc khi nó hầu như tối ưu hoá mọi việc cho chúng ta hết cả rồi. 
+									</p>
+									<p>
+										Như chúng ta đã biết, khi chúng ta xây dựng ứng dụng web bằng PHP thuần, việc tối ưu đường dẫn là điều phải sử dụng thường xuyên, khi bạn muốn cho website bạn "chuẩn SEO" và người dùng sẽ tìm kiếm đến nhiều hơn.
+									</p>
+									<i>Ví dụ như thế này ha, đối với PHP thuần</i>
+									<p><code>https://boyvmt.github.io/1412579-1412564.github.io/category.php?id=1&alias=day-la-san-pham-test</code></p>
+									<i>Thì với Laravel nó sẽ đẹp đẽ hơn như này chả hạn</i>
+									<p><code>https://boyvmt.github.io/1412579-1412564.github.io/category/1/day-la-san-pham-test</code></p>
+									<p>Việc sử dụng Route cũng rất đơn gian, với phiên bản 5.4 thì Laravel đã tách Route ra một thư mục riêng với cái tên <i>routes</i>, và bạn sử dụng chủ yếu file <i>web.php</i> để định tuyến cho các đường dẫn của mình</p>
+                                </div><!--//section-block-->
+                                <div class="section-block">
+                                    <h4>Một số thao tác cơ bản với Route</h4>
+                                    <div class="code-block">
+                                        <h6>Cú pháp đơn giản để tạo route</h6>
+                                        <pre><code class="language-php">
+Route::get('/', function () {
+    return 'Home';
+});
+ 
+Route::post('foo/bar', function () {
+    return 'foo/bar';
+});
+ 
+Route::put('foo/bar', function () {
+    
+});
+ 
+Route::delete('foo/bar', function () {
+    
+});
+									</code></pre>
+                                    </div><!--//code-block-->
+                                    <p>Với thao tác đơn giản như thế này, chúng ta đã tạo được route với 4 method cơ bản là mà Laravel hỗ trợ, và chúng ta sử dụng callback trực tiếp trong Route, tuy nhiên nếu vậy thì lại không đáp ứng mô hình MVC, vì vậy ta phải sử dụng một Controller để chứa hàm xử lý cho Route đó.</p>
+
+                                    <h4>Một số thao tác cơ bản với Route</h4>
+                                    <div class="code-block">
+                                        <h6>Cú pháp đơn giản để tạo route</h6>
+                                        <pre><code class="language-php">
+Route::get('/', function () {
+    return 'Home';
+});
+ 
+Route::post('foo/bar', function () {
+    return 'foo/bar';
+});
+ 
+Route::put('foo/bar', function () {
+    
+});
+ 
+Route::delete('foo/bar', function () {
+    
+});
+									</code></pre>
+                                    </div><!--//code-block-->
+                                    <p>Với thao tác đơn giản như thế này, chúng ta đã tạo được route với 4 method cơ bản là mà Laravel hỗ trợ, và chúng ta sử dụng callback trực tiếp trong Route, tuy nhiên nếu vậy thì lại không đáp ứng mô hình MVC, vì vậy ta phải sử dụng một Controller để chứa hàm xử lý cho Route đó.</p>
+                                    <p>Ngoài ra, chúng ta còn có thể đặt tên cho route đó, giúp ta quản lý tốt hơn và mỗi khi gọi chỉ cần nhớ cái tên alias mà chúng ta đã đặt là có thể sử dụng rồi.</p>
+									<div class="code-block">
+                                        <h6>Một ví dụ khác được trích từ Demo</h6>
+                                        <pre><code class="language-php">
+//as tương ứng với alias, giúp ta tạo tên cho Route đó để quản lý tốt hơn.
+//Cùng với đó là việc sử dụng một Controller riêng biệt để xử lý chức năng của route đó. 
+Route::get('/', ['as'=>'homepage','uses'=>'WelcomeController@Homepage']);
+Route::get('danh-muc/{id}/{alias}', ['as'=>'category','uses'=>'WelcomeController@Category']);
+Route::get('san-pham/{id}/{alias}', ['as'=>'productDetail','uses'=>'WelcomeController@productDetail']);
+Route::get('mua-hang/{id}/{alias}',['as' => 'shoppingCart','uses' => 'WelcomeController@shoppingCart']);
+									</code></pre>
+                                    </div><!--//code-block-->
+                                    <p>Đối với việc URL lặp đi lặp lại qúa nhiều thứ, chả hạn như <i>localhost/admin/abc</i> và <i>localhost/admin/xyz</i>, nếu viết như vậy quá mất thời gian của chúng ta, vì vậy Route trong Laravel cho phép ta sử dụng <i><b>Route group</b></i> để gom chúng lại</p>
+                                    <div class="code-block">
+                                        <h6>Một ví dụ về group được trích từ Demo</h6>
+                                        <pre><code class="language-php">
+//Chúng ta có thể lồng hai group vào với nhau
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('dashboard', ['as' => 'admin.dashboard', 'uses' => 'AdminController@dashboard']);
+
+    Route::group(['prefix'=>'cate'],function(){
+        //route get list
+        Route::get('list', ['as'=>'admin.cate.getList','uses'=>'CateController@getList']);
+        //Route Add
+        Route::get('add',['as'=>'admin.cate.getAdd','uses'=>'CateController@getAdd']);
+        Route::post('add',['as'=>'admin.cate.postAdd','uses'=>'CateController@postAdd']);
+        //Route Delete
+        Route::get('delete/{id}',['as'=>'admin.cate.getDelete','uses'=>'CateController@getDelete']);
+        //Route 
+        Route::get('edit/{id}',['as'=>'admin.cate.getEdit','uses'=>'CateController@getEdit']);
+        Route::post('edit/{id}',['as'=>'admin.cate.postEdit','uses'=>'CateController@postEdit']);
+});
+									</code></pre>
+                                    </div><!--//code-block-->
+                                    <h4>Vậy chúng ta truyền tham số như thế nào?</h4>
+                                    <p>Điều này cũng đơn giản không kém, bạn sẽ có nhu cầu lấy thông tin từ URL người truy cập, có thể là id của một sản phẩm, có thể là id người dùng, slug của danh mục, vân vân...Route cho phép bạn hoàn toàn làm điều này và rất đơn giản!!</p>
+                                    <div class="code-block">
+                                        <h6>Một ví dụ truyền tham số trong Demo</h6>
+                                        <pre><code class="language-php">
+//Tham số bắt buộc
+Route::get('danh-muc/{id}/{alias}', ['as'=>'category','uses'=>'WelcomeController@Category']);
+Route::get('edit/{id}',['as'=>'admin.cate.getEdit','uses'=>'CateController@getEdit']);
+Route::post('edit/{id}',['as'=>'admin.cate.postEdit','uses'=>'CateController@postEdit']);
+
+//Đôi khi ta sẽ sử dụng route với tham số không bắt buộc, ta dùng như sau
+Route::get('user/{name?}', function ($name = null) {
+    if ($name == null)
+        //Response với trang profile của user hiện tại
+    else 
+       //Response với trang profile của user xác định theo $name
+});								</code></pre>
+                                    </div><!--//code-block-->
+                                    <h4>Ngoài ra, Route cũng cho phép ta quy định mẫu cho các tham số với Regular Expression</h4>
+                                    <div class="code-block">
+                                        <h6>Ví dụ</h6>
+                                        <pre><code class="language-php">
+Route::get('user/{name}', function ($name) {
+    // Xem tham số ở vị trí này là tên, nhận giá trị chuỗi
+})
+->where('name', '[A-Za-z]+');
+ 
+Route::get('user/{id}', function ($id) {
+    // Xem tham số ở vị trí này là id, nhận giá trị số
+})
+->where('id', '[0-9]+');
+ 
+Route::get('user/{id}/{name}', function ($id, $name) {
+    //
+})
+->where(['id' => '[0-9]+', 'name' => '[a-z]+']);						</code></pre>
+                                    </div><!--//code-block-->
+                                </div>
+                                <h4>Middleware trong Route</h4>
+                                <p>Laravel cũng cung cấp cho chúng ta cách kiểm tra người dùng hợp lệ khi truy cập vào một route nào đó, chúng ta có thể sử dụng Middleware trực tiếp trong Route, tuy nhiên vài phiên bản gần đây chúng ta sẽ khai báo construct middle tại các Controller để tối ưu và tránh các lỗi "truy cập" trái phép nếu ta thiết lập ở Route.</p>
+                                <div class="code-block">
+                                        <h6>Một ví dụ về sử dụng middleware trong route</h6>
+                                        <pre><code class="language-php">
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+	Route::get('dashboard', ['as'=>'admin.dashboard','uses'=>'DeThiController@dashboard']);
+	
+	Route::group(['prefix'=>'dethi'],function(){
+	//route get list
+		Route::get('list', ['as'=>'admin.dethi.getList','uses'=>'DeThiController@getList']);
+		//Route Add
+		Route::get('add',['as'=>'admin.dethi.getAdd','uses'=>'DeThiController@getAdd']);
+		Route::post('add',['as'=>'admin.dethi.postAdd','uses'=>'DeThiController@postAdd']);
+
+		Route::get('delete/{id}',['as'=>'admin.dethi.getDelete','uses'=>'DeThiController@getDelete']);
+	});
+});
+										</code></pre>
+                                    </div><!--//code-block-->
+                                    <p>Và còn rất nhiều thứ khác mà chúng ta phải tìm hiểu như Restful API, Laravel đã cung cấp cho chúng ta 1 thao tác tạo cực nhanh với đầy đủ thao tác CRUD, và nhiều hơn thế nữa. </p>
+                            </section><!--//doc-section-->
+                            <section id="other-section" class="doc-section">
+                                <h2 class="section-title">Một số tính năng đặc biệt trong Laravel</h2>
+                                <div class="section-block">
+                                    <p>
+                                    Ngoài những tính năng được giới thiệu phía trên, Laravel còn rất nhiều tính năng nhỏ bên trong, tuy nhiên nó lại giúp cho chúng ta rất nhiều trong website của mình, và chúng ta không phải mất quá nhiều công sức để làm việc đó như thường phải làm khi code PHP thuần. Hoặc những công cụ giúp chúng ta thao tác nhanh với dữ liệu trong project của mình chả hạn.
+                                    </p>
+									<h4>Tinker</h4>
+									<p>
+										Đây là một thứ khá lạ và ít người biết đến trong Laravel, mình cũng chỉ mới khám phá được nó trong một số bài tham khảo gần đây mà thôi, dù cũng đã biết Laravel một thời gian. 
+									</p>
+									<p>
+										Tinker được kích hoạt từ CLI Artisan của Laravel, nó là một <i>repl (read-eval-print loop</i>, với Tinker, nó có thể giúp ta nhanh chóng thao tác dữ liệu trong project của mình, thao tác với cả CSDL (<i>thông qua Model được khai báo</i>), ngoài chúng ta có thể viết hàm trên nó, tuy nhiên chắc không nhiều người rảnh để viết hàm trên command line đâu nhỉ? :D
+									</p>
+									<i>Chúng ta gọi Tinker bằng cú pháp</i>
+									<p><code>php artisan tinker</code></p>
+									<h6>Một số thao tác với Tinker</h6>
+									<pre><code class="language-php">
+//đếm số lượng trong bảng user
+>>> App\User::count()
+=> 2
+>>> App\Admin::count()
+=> 1
+//tạo một biến model mới
+>>> $user = new App\User
+=> App\User {#690}
+>>> $user = new App\User;
+=> App\User {#685}
+>>> $user->username = 'test'
+=> "test"
+>>> $user->passwor = Hash::make(123456)
+=> "$2y$10$R3I11/qIymzOD/KTN6BD6OeepaSKxJNRr5pjEoecQsxPRFeiD5.Te"
+>>> $user->save()
+//gặp lỗi Tinker cũng sẽ báo
+Illuminate\Database\QueryException with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'passwor' in 'field list' (SQL: insert into `users` (`usernam
+e`, `passwor`, `updated_at`, `created_at`) values (test, $2y$10$R3I11/qIymzOD/KTN6BD6OeepaSKxJNRr5pjEoecQsxPRFeiD5.Te, 2017-05-02 16:22:16, 2017-05-02 16:22:16))'
+>>> $user->password = Hash::make(123456)
+=> "$2y$10$dSp7UtaBR6gxpsNprz83aOPxA4QIQl2zkTLRqRPG0O.XRlYi.crMi"
+>>> $user->save()
+Illuminate\Database\QueryException with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'passwor' in 'field list' (SQL: insert into `users` (`usernam
+e`, `passwor`, `updated_at`, `created_at`, `password`) values (test, $2y$10$R3I11/qIymzOD/KTN6BD6OeepaSKxJNRr5pjEoecQsxPRFeiD5.Te, 2017-05-02 16:22:16, 2017-05-02 16
+:22:16, $2y$10$dSp7UtaBR6gxpsNprz83aOPxA4QIQl2zkTLRqRPG0O.XRlYi.crMi))'
+>>> $user = new App\User;
+=> App\User {#687}
+>>> $user->username = 'test'
+=> "test"
+>>> $user->password = Hash::make(123456)
+=> "$2y$10$L2y1uSyBBIoI0PIEnyu4wuuserZ3LX/JVoLOHE3NV.Kc.KjUbD8Fu"
+>>> $user->save()
+//Save user mới thành công
+Illuminate\Database\QueryException with message 'SQLSTATE[HY000]: General error: 1364 Field 'level' doesn't have a default value (SQL: insert into `users` (`username
+`, `password`, `updated_at`, `created_at`) values (test, $2y$10$L2y1uSyBBIoI0PIEnyu4wuuserZ3LX/JVoLOHE3NV.Kc.KjUbD8Fu, 2017-05-02 16:23:07, 2017-05-02 16:23:07))'
+>>> $user->level = 0
+=> 0
+>>> $user->save()
+=> true
+//bảng user đã tăng lên 1 sau khi ta save
+>>> App\User::count()
+=> 3
+									</code></pre>
+									<h4>Migration</h4>
+									<p>Đây cũng là điều thứ hai mình muốn nói đến với các tính năng đặc biệt của Laravel, Migration cho phép bạn thao tác với cơ sở dữ liệu rất tuyệt vời, bạn không phải làm quá nhiều việc với phpMyađmin.</p>
+									<p>
+										Nói nhiều như vậy rồi rốt cuộc Migration giúp ta làm cái gì? Nó cho phép bạn tạo, xoá, rollback, refresh,...và nhiều hơn thế nữa.
+									</p>
+									<h6>Bạn có thể tham khảo một số lệnh của Migration dưới đây</h6>
+									<pre><code class="language-php"></code>
+ php artisan
+      migrate
+      migrate:rollback
+      migrate:status
+      migrate:reset
+      migrate:refresh
+      migrate:install
+      make:migration
+									</pre>
+								<p>Vậy ta hãy thử tìm hiểu cách tạo một bảng thông qua Migration nhé</p>
+								<i>Trước tiên hãy tạo một migration nhờ vào câu lệnh CLI Artisan cung cấp</i>
+								<p><code>
+									php artisan make:migration *tablename
+								</code></p>
+								<i>Sau khi lệnh được thực thi và thông báo thành công, thì chúng ta hãy vào  folder <b>database\migration</b> để kiểm tra và thực hiện tạo bảng nhé!</i>
+								<h6>Đây là thông tin bảng users mình tạo ra</h6>
+								<pre><code class="language-php">
+&lt;?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateUsersTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('users', function(Blueprint $table)
+		{
+			$table->increments('id')->unique();
+			$table->string('username');
+			$table->string('password', 60);
+			$table->string('email')->unique();
+			$table->tinyInteger('level');
+			$table->rememberToken();
+			$table->timestamps();
+		});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('users');
+	}
+
+}
+								</code></pre>
+								<h6>Còn đây là đối với bảng products</h6>
+								<pre><code class="language-php">
+&lt;?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateProductsTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('products', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->string('name')->unique();
+			$table->string('alias');
+			$table->integer('price');
+			$table->text('intro');
+			$table->longText('content');
+			$table->string('image');
+			$table->string('keywords');
+			$table->string('description');
+			//khai báo khoá ngoại
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->integer('cate_id')->unsigned();
+			//khai báo khoá ngoại
+			$table->foreign('cate_id')->references('id')->on('cates')->onDelete('cascade');
+			$table->timestamps();
+		});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('products');
+	}
+
+}
+
+								</code></pre>
+								<p>Class này có 2 function là up() và down().
+
+Function up() sẽ được gọi khi bạn chạy lệnh php artisan migrate còn function down() sẽ được gọi khi bạn chạy lệnh php artisan migrate:rollback .</p>
+								<i>Bước cuối cùng bạn chỉ cần thực hiện thao tác migrate nó vào database thôi, tuy nhiên hãy nhớ rằng, hãy tạo những bảng cha trước các bảng con, vì nếu chúng ta không làm vậy khi migrate sẽ gặp lỗi đứa con (khoá ngoại) không biết cha mình là ai đó nhé :D</i>
+								<p><code>php artisan migrate</code></p>
+								<h3>Auto pagination</h3>
+								<p>Một trong những điều quan trọng nhất khi chúng ta xây dựng một website đó là việc chúng phân trang ra sau nếu như chúng ta có hàng trăm, hàng ngàn record. Đối với khi code PHP thuần, ta phải đếm trang, rồi select từng trang và chia trang sao cho giao diện hợp lý. Rất mất thời giản phải không, đối với Laravel điều này thật dễ dàng.</p>
+								<i>Hãy xem cùng mình nhé</i>
+								<pre><code class="language-php">
+//đây là cách chúng ta phân trang khi query
+//lấy danh sách các sản phẩm liền quan tới sản phẩm hiện tại
+public function productDetail($id,$alias){
+    $product_detail = DB::table('products')->where('id',$id)->first();
+    $images = DB::table('product_images')->select('id','image')->where('product_id',$id)->get();
+    //Hiện số trang
+    $related = DB::table('products')->where('cate_id',$product_detail->cate_id)->where('id','<>',$id)->paginate(2);
+	
+	//chỉ hiện nút Next và Pre
+	$related = DB::table('products')->where('cate_id',$product_detail->cate_id)->where('id','<>',$id)->simplePaginate(2);
+
+    return view('users.pages.detail',compact('product_detail','images','related'));
+}
+//Và cách chúng ta phân trang như thế nào?
+//Chúng ta chỉ cần tìm 1 chỗ hợp lý và sử dụng hàm này thôi
+{{ $related->links() }}
+								</code></pre>
+								<h6>Và đây là kết quả chúng ta được, hơi vỡ giao diện tí thui :D</h6>
+								<img src="images/24.png" class="img-responsive center" alt="">
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                            <section id="open-section" class="doc-section">
+                                <h2 class="section-title">Laravel sở hữu một cộng đồng Open Source cực kỳ lớn</h2>
+                                <div class="section-block">
+                                    <p>Chúng ta đã biết rằng, Laravel là Framework PHP được các lập trình viên đánh giá tốt nhất và phổ biến nhất thế giới trong những năm qua, một phần vì nó rất tuyệt vời, còn phần khác đó chính là nó có một cộng đồng lập trình viên rất lớn và rất nhiều lập trình viên support cho em nó.
+                                    </p>
+									<img src="images/laravel.jpg" class="img-responsive 
+									center" alt="">
+									<p>Như mình đã nói tới, vì cộng đồng rất lớn nên số lượng package open source rất nhiều, bạn không cần phải quá biết nhiều, hoặc bạn không có nhiều thời gian để thực hiện phần đó, bạn có thể dễ dàng tìm kiếm một package hỗ trợ bạn làm việc đó.</p>
+									<p>Như mình chả với, với website demo của mình hiện tại, mình có một package hỗ trợ tạo nhanh một <i>Giỏ hàng - Shopping Cart</i> chỉ vài thao tác cơ bản, bạn không phải quá mất thời gian để xây dựng lại một hệ thống riêng dành cho bạn. Chi tiết package đó bạn có thể xem <a href="https://github.com/Crinsane/LaravelShoppingcart" target="_blank">TẠI ĐÂY</a></p>
+									<h5>Tóm lại</h5>
+									<p>Laravel Framework là một framework rất dễ học và dễ làm việc với nó, đây là framework khởi đầu cho những bạn đã từng tiếp xúc với PHP và muốn bước qua một framework mới. </p>
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar hidden-xs">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                                <li><a class="scrollto" href="#download-section">Giới thiệu</a></li>
+                                <li>
+                                    <a class="scrollto" href="#installation-section">MVC trong Laravel Framework</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#step1">Giới thiệu về MVC</a></li>
+                                        <li><a class="scrollto" href="#step2">MVC trong Laravel Framework</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li><a class="scrollto" href="#icons-section">Composer và Arisan CLI</a></li>
+                                <li><a class="scrollto" href="#video-section">Blade Template</a></li>
+                                <li>
+                                    <a class="scrollto" href="#code-section">Thao tác với CSDL</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#html">Query Builder</a></li>
+                                        <li><a class="scrollto" href="#css">Eloquent ORM</a></li>
+                                        <li><a class="scrollto" href="#php">Nên chọn cái nào để sử dụng?</a></li>
+                                        
+                                    </ul><!--//nav-->
+                                </li>
+                                <li><a class="scrollto" href="#callouts-section">Request</a></li>
+                                <li><a class="scrollto" href="#tables-section">Validation</a></li>
+                                <li><a class="scrollto" href="#buttons-section">Routing trong Laravel</a></li>
+                                <li><a class="scrollto" href="#other-section">Một số tính năng đặc biệt trong Laravel</a></li>
+                                <li><a class="scrollto" href="#open-section">Cộng đồng rất lớn</a></li>
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+        <div id="promo-block" class="promo-block">
+            <div class="container">
+                <div class="promo-block-inner">
+                    <h3 class="promo-title text-center"><a href="#" target="_blank">Nội dung được viết bởi Vũ Minh Trí và Trần Thuỳ Bích Trâm - HCMUS - K14</a></h3>
+                </div><!--//promo-block-inner-->  
+            </div><!--//container-->
+        </div><!--//promo-block-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" targe="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+
